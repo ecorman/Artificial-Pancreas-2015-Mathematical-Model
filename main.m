@@ -12,13 +12,13 @@ format long
 CHO = 120;
 
 % c_sub_i, truncated normal prior distribution
-c_sub_i = truncate(makedist('Normal','mu',0,'sigma',1),0,inf);
+c_sub_i = truncate(makedist('Normal','mu',0,'sigma',(inv(0.04))),0,inf);
 
 % log_k_sub_e, normal prior distribution, with lognormal data as output
-log_k_sub_e = makedist('Normal','mu',-2.63,'sigma',4.49);
+log_k_sub_e = makedist('Normal','mu',-2.63,'sigma',(inv(4.49)));
 
 % log_Q_sub_b, normal prior distribution, with lognormal data as output
-log_Q_sub_b = makedist('Normal','mu',-0.7,'sigma',1.5);
+log_Q_sub_b = makedist('Normal','mu',-0.7,'sigma',(inv(1.5)));
 
 % p_sub_i, uniform prior distribution
 p_sub_i = makedist('Uniform',0,1);
@@ -50,7 +50,7 @@ b_GMM = fitgmdist(b,3,'CovarianceType','diagonal','SharedCov',...
 % M_mean, mean for k_sub_m and d
 M_mean = [-3.9,2.3];
 
-% omega_sub_m_matrix, precision matrix for k_sub_m, and d
+% for loop for omega_sub_m_matrix, precision matrix for k_sub_m, and d
 if CHO > 0
     % Second value in diagonal for omega_sub_m_matrix
     var = ((100/CHO)^2);
@@ -73,6 +73,7 @@ if CHO > 0
     [idx_c,nlogl_c,P_c,logpdf_c] = cluster(c_GMM,c);
     
 end
+% end of for loop
 
 % k_sub_12 data for 6 subject
 k_sub_12 = [0.0343,0.0871,0.0863,0.0968,0.0390,0.0458];
@@ -160,42 +161,7 @@ v_GMM = fitgmdist(v,14,'CovarianceType','diagonal','SharedCov',...
 
 % Creating statistical data of Gaussian Mixture Model
  [idx_v,nlogl_v,P_v,logpdf_v] = cluster(v_GMM,v);
+  
+prec_mat = igmrfprec([10,10],1);
 
-% Normal distribution of random numbers for f_sub_g_of_t
-f_sub_g_of_t = mvnrnd(0,16,100000);
-
-% Creating object for exhaustive search
-nn_f_sub_g_of_t = ExhaustiveSearcher(f_sub_g_of_t,'distance','euclidean');
-
-% Creating indicies for nearest neighbor for f_sub_g_of_t
-[IdxGs,DGs] = knnsearch(nn_f_sub_g_of_t,f_sub_g_of_t,'k',12, ...
-    'Distance','euclidean');
-
-% Creating normal distribution for f_sub_g_of_t
-f_sub_g_of_t_normdist = fitdist(f_sub_g_of_t,'Normal');
-
-% Normal distribution of random numbers for f_sub_m_of_t
-f_sub_m_of_t = mvnrnd(0,100,100000);
-
-% Creating object for exhaustive search for f_sub_m_of_t
-nn_f_sub_m_of_t = ExhaustiveSearcher(f_sub_m_of_t,'distance','euclidean');
-
-% Creating indices for nearest neighbor for f_sub_m_of_t
-[IdxMs,DMs] = knnsearch(nn_f_sub_m_of_t,f_sub_m_of_t,'k',12, ...
-    'Distance','euclidean');
-
-% Creating normal distribution for f_sub_m_of_t 
-f_sub_m_of_t_normdist = fitdist(f_sub_m_of_t,'Normal');
-
-% Normal distribution of random numbers for I_sub_m_of_t
-I_sub_m_of_t = mvnrnd(0,100,100000);
-
-% Creating object for exhaustive search for I_sub_m_of_t
-nn_I_sub_m_of_t = ExhaustiveSearcher(I_sub_m_of_t,'distance','euclidean');
-
-% Creating indices for nearest neighbor for I_sub_m_of_t
-[IdxIms,DIms] = knnsearch(nn_I_sub_m_of_t,I_sub_m_of_t,'k',12, ...
-    'Distance','euclidean');
-
-% Creating normal distribution for I_sub_m_of_t
-I_sub_m_of_t_normdist = fitdist(I_sub_m_of_t,'Normal');
+[V,lambda] = eigs(prec_mat);
