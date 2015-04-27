@@ -1,0 +1,5564 @@
+Model {
+  Name			  "AP_DiffEQs"
+  Version		  8.4
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "windows-1252"
+  GraphicalInterface {
+    NumRootInports	    20
+    Inport {
+      Name		      "p_sub_i"
+      BusObject		      ""
+    }
+    Inport {
+      Name		      "k_sub_is1 "
+      BusObject		      ""
+    }
+    Inport {
+      Name		      "k_sub_is2 "
+      BusObject		      ""
+    }
+    Inport {
+      Name		      "k_sub_if"
+      BusObject		      ""
+    }
+    Inport {
+      Name		      "k_sub_e"
+      BusObject		      ""
+    }
+    Inport {
+      Name		      "c_sub_i"
+      BusObject		      ""
+    }
+    Inport {
+      Name		      "w "
+      BusObject		      ""
+    }
+    Inport {
+      Name		      "k_sub_a1"
+      BusObject		      ""
+    }
+    Inport {
+      Name		      "S_sub_t"
+      BusObject		      ""
+    }
+    Inport {
+      Name		      "k_sub_a2"
+      BusObject		      ""
+    }
+    Inport {
+      Name		      "S_sub_d"
+      BusObject		      ""
+    }
+    Inport {
+      Name		      "k_sub_a3"
+      BusObject		      ""
+    }
+    Inport {
+      Name		      "S_sub_e"
+      BusObject		      ""
+    }
+    Inport {
+      Name		      "F_sub_01"
+      BusObject		      ""
+    }
+    Inport {
+      Name		      "k_sub_12"
+      BusObject		      ""
+    }
+    Inport {
+      Name		      "EGP_0"
+      BusObject		      ""
+    }
+    Inport {
+      Name		      "k_sub_m"
+      BusObject		      ""
+    }
+    Inport {
+      Name		      "CHO"
+      BusObject		      ""
+    }
+    Inport {
+      Name		      "p_sub_m"
+      BusObject		      ""
+    }
+    Inport {
+      Name		      "d"
+      BusObject		      ""
+    }
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.5"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  DataTypeOverrideAppliesTo "AllNumericTypes"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  FPTRunName		  "Run 1"
+  MaxMDLFileLineLength	  120
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [-11.0, 0.0, 1924.0, 1084.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[0]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[1868.0, 849.0]
+	ZoomFactor		[0.1]
+	Offset			[-4624.5131835922293, -140.0]
+      }
+    }
+  }
+  Created		  "Wed Feb 25 23:34:44 2015"
+  Creator		  "Monica"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "Monica"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Apr 27 04:35:55 2015"
+  RTWModifiedTimeStamp	  347067157
+  ModelVersionFormat	  "1.%<AutoIncrement:5>"
+  ConfigurationManager	  "none"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "disabled"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ShowMarkup		  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  PauseTimes		  "5"
+  NumberOfSteps		  1
+  SnapshotBufferSize	  10
+  SnapshotInterval	  10
+  NumberOfLastSnapshots	  0
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  Object {
+    $PropName		    "DataLoggingOverride"
+    $ObjectID		    6
+    $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
+    model_		    "AP_DiffEQs"
+    overrideMode_	    [0.0]
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      "AP_DiffEQs"
+      PropName		      "logAsSpecifiedByModels_"
+    }
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      []
+      PropName		      "logAsSpecifiedByModelsSSIDs_"
+    }
+  }
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  CovEnableCumulative	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  CovSFcnEnable		  off
+  CovBoundaryAbsTol	  0.000010
+  CovBoundaryRelTol	  0.010000
+  CovUseTimeInterval	  off
+  CovStartTime		  0
+  CovStopTime		  0
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      7
+      Version		      "1.14.3"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  8
+	  Version		  "1.14.3"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  EnableConcurrentExecution off
+	  ConcurrentTasks	  off
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  9
+	  Version		  "1.14.3"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "Dataset"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  VisualizeSimOutput	  on
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  10
+	  Version		  "1.14.3"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    8
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "UseSpecifiedMinMax"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseDivisionForNetSlopeComputation "Off"
+	  UseFloatMulNetSlope	  off
+	  DefaultUnderspecifiedDataType	"double"
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  CachingGlobalReferences off
+	  GlobalBufferReuse	  on
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  128
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	  ParallelExecutionInRapidAccelerator on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  11
+	  Version		  "1.14.3"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Simplified"
+	  MergeDetectMultiDrivingBlocksExec "error"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "EnableAllAsError"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "warning"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "none"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	  IntegerSaturationMsg	  "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  12
+	  Version		  "1.14.3"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  13
+	  Version		  "1.14.3"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  14
+	  Version		  "1.14.3"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	  SimGenImportedTypeDefs  off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  15
+	  Version		  "1.14.3"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    15
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    Cell		    "PortableWordSizes"
+	    Cell		    "GenerateWebview"
+	    Cell		    "GenerateCodeMetricsReport"
+	    Cell		    "GenerateCodeReplacementReport"
+	    Cell		    "GenerateErtSFunction"
+	    Cell		    "CreateSILPILBlock"
+	    Cell		    "CodeExecutionProfiling"
+	    Cell		    "CodeProfilingSaveOptions"
+	    Cell		    "CodeProfilingInstrumentation"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  TLCOptions		  ""
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  PackageName		  ""
+	  TemplateMakefile	  "grt_default_tmf"
+	  PostCodeGenCommand	  ""
+	  Description		  ""
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ProcessScript		  ""
+	  ConfigurationScript	  ""
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  CustomSourceCode	  ""
+	  CustomHeaderCode	  ""
+	  CustomInclude		  ""
+	  CustomSource		  ""
+	  CustomLibrary		  ""
+	  CustomInitializer	  ""
+	  CustomTerminator	  ""
+	  Toolchain		  "Automatically locate an installed toolchain"
+	  BuildConfiguration	  "Faster Builds"
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation off
+	  SILDebugging		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  RTWCompilerOptimization "Off"
+	  RTWCustomCompilerOptimizations ""
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  DataInitializer	  ""
+	  SharedConstantsCachingThreshold 1024
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      16
+	      Version		      "1.14.3"
+	      Array {
+		Type			"Cell"
+		Dimension		24
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"ParameterTuningSideEffectCode"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"InsertPolySpaceComments"
+		Cell			"SFDataObjDesc"
+		Cell			"MATLABFcnDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InternalIdentifier"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"CustomSymbolStrUtil"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      CommentStyle	      "Auto"
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifier      "Shortened"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      17
+	      Version		      "1.14.3"
+	      Array {
+		Type			"Cell"
+		Dimension		13
+		Cell			"GeneratePreprocessorConditionals"
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"GenerateAllocFcn"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "NOT IN USE"
+	      TargetLangStandard      "C89/C90 (ANSI)"
+	      CodeReplacementLibrary  "None"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns on
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      CodeInterfacePackaging  "Nonreusable function"
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      CastingMode	      "Nominal"
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    on
+	      AutosarCompliant	      off
+	      GRTInterface	      off
+	      GenerateAllocFcn	      off
+	      GenerateSharedConstants on
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	      MultiInstanceErrorCode  "Error"
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 100, 40, 1180, 680 ] 
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    7
+  }
+  Object {
+    $PropName		    "DataTransfer"
+    $ObjectID		    18
+    $ClassName		    "Simulink.GlobalDataTransfer"
+    DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
+    DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
+    DefaultTransitionBetweenContTasks "Ensure deterministic transfer (minimum delay)"
+    DefaultExtrapolationMethodBetweenContTasks "None"
+    AutoInsertRateTranBlk   [0]
+  }
+  ExplicitPartitioning	  off
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "on"
+    RunInitForIconRedraw    "off"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      ActionPort
+      InitializeStates	      "held"
+      PropagateVarSize	      "Only when execution is resumed"
+      ActionType	      "unset"
+    }
+    Block {
+      BlockType		      Clock
+      DisplayTime	      off
+      Decimation	      "10"
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
+      BlockType		      FunctionCaller
+      FunctionPrototype	      "y=f(x)"
+      InputArgumentSpecifications "<Enter example>"
+      OutputArgumentSpecifications "<Enter example>"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      If
+      NumInputs		      "1"
+      IfExpression	      "u1 > 0"
+      ShowElse		      on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Integrator
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "0"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+      IgnoreLimit	      off
+      ZeroCross		      on
+      ContinuousStateAttributes	"''"
+    }
+    Block {
+      BlockType		      Math
+      Operator		      "exp"
+      OutputSignalType	      "auto"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      IntermediateResultsDataTypeStr "Inherit: Inherit via internal rule"
+      AlgorithmType	      "Newton-Raphson"
+      Iterations	      "3"
+    }
+    Block {
+      BlockType		      Merge
+      Inputs		      "2"
+      InitialOutput	      "[]"
+      AllowUnequalInputPortWidths off
+      InputPortOffsets	      "[]"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      FunctionInterfaceSpec   "void_void"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      Opaque		      off
+      MaskHideContents	      off
+      SFBlockType	      "NONE"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+      ContentPreviewEnabled   off
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+  }
+  System {
+    Name		    "AP_DiffEQs"
+    Location		    [-11, 0, 1913, 1084]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "10"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "308"
+    Block {
+      BlockType		      Inport
+      Name		      "p_sub_i"
+      SID		      "10"
+      Position		      [1390, 1205, 1560, 1285]
+      ZOrder		      11
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "k_sub_is1\n"
+      SID		      "5"
+      Position		      [630, 683, 745, 737]
+      ZOrder		      6
+      Port		      "2"
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "k_sub_is2\n"
+      SID		      "27"
+      Position		      [1020, 2995, 1190, 3075]
+      ZOrder		      21
+      Port		      "3"
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "k_sub_if"
+      SID		      "43"
+      Position		      [535, 4943, 650, 4997]
+      ZOrder		      29
+      Port		      "4"
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "k_sub_e"
+      SID		      "71"
+      Position		      [2455, 7550, 2625, 7630]
+      ZOrder		      43
+      Port		      "5"
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "c_sub_i"
+      SID		      "76"
+      Position		      [4005, 7310, 4175, 7390]
+      ZOrder		      46
+      Port		      "6"
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "w\n"
+      SID		      "85"
+      Position		      [2465, 9085, 2635, 9165]
+      ZOrder		      52
+      Port		      "7"
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "k_sub_a1"
+      SID		      "93"
+      Position		      [2500, 9390, 2670, 9470]
+      ZOrder		      55
+      Port		      "8"
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "S_sub_t"
+      SID		      "94"
+      Position		      [2490, 9510, 2660, 9590]
+      ZOrder		      56
+      Port		      "9"
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "k_sub_a2"
+      SID		      "112"
+      Position		      [2505, 10235, 2675, 10315]
+      ZOrder		      64
+      Port		      "10"
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "S_sub_d"
+      SID		      "113"
+      Position		      [2505, 10390, 2675, 10470]
+      ZOrder		      65
+      Port		      "11"
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "k_sub_a3"
+      SID		      "131"
+      Position		      [2505, 11055, 2675, 11135]
+      ZOrder		      73
+      Port		      "12"
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "S_sub_e"
+      SID		      "132"
+      Position		      [2505, 11205, 2675, 11285]
+      ZOrder		      74
+      Port		      "13"
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "F_sub_01"
+      SID		      "150"
+      Position		      [4190, 12493, 4305, 12547]
+      ZOrder		      82
+      Port		      "14"
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "k_sub_12"
+      SID		      "175"
+      Position		      [4855, 11755, 5025, 11835]
+      ZOrder		      94
+      Port		      "15"
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "EGP_0"
+      SID		      "180"
+      Position		      [3375, 12870, 3545, 12950]
+      ZOrder		      96
+      Port		      "16"
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "k_sub_m"
+      SID		      "211"
+      Position		      [1960, 13105, 2130, 13185]
+      ZOrder		      113
+      Port		      "17"
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "CHO"
+      SID		      "230"
+      Position		      [2065, 13440, 2200, 13500]
+      ZOrder		      123
+      Port		      "18"
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "p_sub_m"
+      SID		      "238"
+      Position		      [2660, 13440, 2795, 13500]
+      ZOrder		      127
+      Port		      "19"
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "d"
+      SID		      "244"
+      Position		      [1670, 13960, 1840, 14040]
+      ZOrder		      129
+      Port		      "20"
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      FunctionCaller
+      Name		      "\n"
+      SID		      "8"
+      Ports		      [1, 1]
+      Position		      [1325, 995, 1620, 1145]
+      ZOrder		      9
+      FunctionPrototype	      "u_sub_i = f(t)"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "10^6"
+      SID		      "88"
+      Position		      [3640, 8927, 3830, 9103]
+      ZOrder		      54
+      Value		      "10^6"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Add"
+      SID		      "63"
+      Ports		      [2, 1]
+      Position		      [2365, 6937, 2525, 7113]
+      ZOrder		      39
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Add1"
+      SID		      "75"
+      Ports		      [2, 1]
+      Position		      [4360, 7217, 4520, 7393]
+      ZOrder		      45
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Add10"
+      SID		      "193"
+      Ports		      [2, 1]
+      Position		      [5305, 12747, 5465, 12923]
+      ZOrder		      102
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Add11"
+      SID		      "245"
+      Ports		      [2, 1]
+      Position		      [2150, 13859, 2385, 14046]
+      ZOrder		      130
+      Inputs		      "+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Add12"
+      SID		      "278"
+      Ports		      [2, 1]
+      Position		      [3230, 13676, 3365, 13789]
+      ZOrder		      142
+      Inputs		      "+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Add13"
+      SID		      "287"
+      Ports		      [2, 1]
+      Position		      [4315, 13444, 4550, 13631]
+      ZOrder		      145
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Add14"
+      SID		      "294"
+      Ports		      [2, 1]
+      Position		      [6170, 13077, 6330, 13253]
+      ZOrder		      148
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Add2"
+      SID		      "102"
+      Ports		      [2, 1]
+      Position		      [3800, 9592, 3960, 9768]
+      ZOrder		      61
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Add3"
+      SID		      "124"
+      Ports		      [2, 1]
+      Position		      [3895, 10407, 4055, 10583]
+      ZOrder		      70
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Add4"
+      SID		      "140"
+      Ports		      [2, 1]
+      Position		      [3945, 11137, 4105, 11313]
+      ZOrder		      79
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Add5"
+      SID		      "156"
+      Ports		      [2, 1]
+      Position		      [3870, 12424, 4105, 12611]
+      ZOrder		      86
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Add6"
+      SID		      "173"
+      Ports		      [2, 1]
+      Position		      [5590, 11777, 5750, 11953]
+      ZOrder		      92
+      Inputs		      "+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Add7"
+      SID		      "183"
+      Ports		      [2, 1]
+      Position		      [3115, 12619, 3350, 12806]
+      ZOrder		      99
+      Inputs		      "+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Add8"
+      SID		      "189"
+      Ports		      [2, 1]
+      Position		      [5975, 12057, 6135, 12233]
+      ZOrder		      100
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Add9"
+      SID		      "191"
+      Ports		      [2, 1]
+      Position		      [4575, 12792, 4735, 12968]
+      ZOrder		      101
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Clock
+      Name		      "Clock"
+      SID		      "2"
+      Position		      [20, 1020, 120, 1120]
+      ZOrder		      2
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant"
+      SID		      "35"
+      Position		      [1050, 4037, 1240, 4213]
+      ZOrder		      24
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant1"
+      SID		      "157"
+      Position		      [3600, 12510, 3730, 12620]
+      ZOrder		      87
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant2"
+      SID		      "181"
+      Position		      [2865, 12610, 2995, 12720]
+      ZOrder		      97
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant3"
+      SID		      "202"
+      Position		      [4230, 12792, 4300, 12828]
+      ZOrder		      107
+      Value		      "0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant4"
+      SID		      "229"
+      Position		      [2270, 13497, 2340, 13533]
+      ZOrder		      122
+      Value		      "5551"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant5"
+      SID		      "271"
+      Position		      [2060, 14357, 2130, 14393]
+      ZOrder		      138
+      Value		      "0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant6"
+      SID		      "279"
+      Position		      [3085, 13682, 3155, 13718]
+      ZOrder		      143
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Divide"
+      SID		      "82"
+      Ports		      [2, 1]
+      Position		      [3495, 8679, 3730, 8881]
+      ZOrder		      49
+      Inputs		      "*/"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Divide1"
+      SID		      "154"
+      Ports		      [2, 1]
+      Position		      [3345, 12079, 3580, 12281]
+      ZOrder		      84
+      Inputs		      "*/"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Divide2"
+      SID		      "155"
+      Ports		      [2, 1]
+      Position		      [3345, 12369, 3580, 12571]
+      ZOrder		      85
+      Inputs		      "*/"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Divide3"
+      SID		      "158"
+      Ports		      [2, 1]
+      Position		      [4215, 12129, 4450, 12331]
+      ZOrder		      88
+      Inputs		      "*/"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Divide4"
+      SID		      "235"
+      Ports		      [2, 1]
+      Position		      [2615, 13544, 2850, 13746]
+      ZOrder		      125
+      Inputs		      "*/"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain"
+      SID		      "18"
+      Position		      [1905, 17, 2095, 173]
+      ZOrder		      15
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain1"
+      SID		      "29"
+      Position		      [2180, 3567, 2370, 3723]
+      ZOrder		      23
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain2"
+      SID		      "50"
+      Position		      [4100, 5277, 4290, 5433]
+      ZOrder		      32
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain3"
+      SID		      "55"
+      Position		      [3225, 6747, 3415, 6903]
+      ZOrder		      36
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain4"
+      SID		      "80"
+      Position		      [4630, 8122, 4820, 8278]
+      ZOrder		      48
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain5"
+      SID		      "109"
+      Position		      [4380, 10117, 4570, 10273]
+      ZOrder		      63
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain6"
+      SID		      "129"
+      Position		      [4400, 10907, 4590, 11063]
+      ZOrder		      72
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain7"
+      SID		      "142"
+      Position		      [4455, 11652, 4645, 11808]
+      ZOrder		      81
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain8"
+      SID		      "299"
+      Position		      [5865, 13337, 6055, 13493]
+      ZOrder		      149
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain9"
+      SID		      "301"
+      Position		      [5735, 11447, 5925, 11603]
+      ZOrder		      150
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      FunctionCaller
+      Name		      "I_sub_m(t)"
+      SID		      "66"
+      Ports		      [1, 1]
+      Position		      [2230, 7270, 2525, 7420]
+      ZOrder		      40
+      FunctionPrototype	      "I_sub_m = f(t)"
+    }
+    Block {
+      BlockType		      If
+      Name		      "If"
+      SID		      "196"
+      Ports		      [1, 2]
+      Position		      [4045, 12841, 4145, 12879]
+      ZOrder		      104
+      IfExpression	      "u1 >= 1"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "If Action\nSubsystem"
+      SID		      "198"
+      Ports		      [1, 1, 0, 0, 0, 0, 0, 1]
+      Position		      [4330, 12792, 4400, 12828]
+      ZOrder		      106
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      System {
+	Name			"If Action\nSubsystem"
+	Location		[-11, -11, 1931, 1091]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  SID			  "199"
+	  Position		  [75, 78, 105, 92]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  ActionPort
+	  Name			  "Action Port"
+	  SID			  "200"
+	  Position		  [170, 15, 229, 43]
+	  ZOrder		  -2
+	  ActionType		  "then"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  SID			  "201"
+	  Position		  [325, 78, 355, 92]
+	  ZOrder		  -3
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "If Action\nSubsystem1"
+      SID		      "204"
+      Ports		      [1, 1, 0, 0, 0, 0, 0, 1]
+      Position		      [4330, 12902, 4400, 12938]
+      ZOrder		      109
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      System {
+	Name			"If Action\nSubsystem1"
+	Location		[342, 471, 840, 771]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  SID			  "205"
+	  Position		  [75, 78, 105, 92]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  ActionPort
+	  Name			  "Action Port"
+	  SID			  "206"
+	  Position		  [170, 15, 229, 43]
+	  ZOrder		  -2
+	  ActionType		  "else"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  SID			  "207"
+	  Position		  [325, 78, 355, 92]
+	  ZOrder		  -3
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "If Action\nSubsystem2"
+      SID		      "263"
+      Ports		      [1, 1, 0, 0, 0, 0, 0, 1]
+      Position		      [2345, 14267, 2415, 14303]
+      ZOrder		      136
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      System {
+	Name			"If Action\nSubsystem2"
+	Location		[-11, -11, 1931, 1091]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  SID			  "264"
+	  Position		  [75, 78, 105, 92]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  ActionPort
+	  Name			  "Action Port"
+	  SID			  "265"
+	  Position		  [170, 15, 229, 43]
+	  ZOrder		  -2
+	  ActionType		  "then"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  SID			  "266"
+	  Position		  [325, 78, 355, 92]
+	  ZOrder		  -3
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "If Action\nSubsystem3"
+      SID		      "267"
+      Ports		      [1, 1, 0, 0, 0, 0, 0, 1]
+      Position		      [2175, 14357, 2245, 14393]
+      ZOrder		      137
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      System {
+	Name			"If Action\nSubsystem3"
+	Location		[342, 471, 840, 771]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  SID			  "268"
+	  Position		  [75, 78, 105, 92]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  ActionPort
+	  Name			  "Action Port"
+	  SID			  "269"
+	  Position		  [170, 15, 229, 43]
+	  ZOrder		  -2
+	  ActionType		  "else"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  SID			  "270"
+	  Position		  [325, 78, 355, 92]
+	  ZOrder		  -3
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Integrator"
+      SID		      "12"
+      Ports		      [1, 1]
+      Position		      [3035, 710, 3220, 880]
+      ZOrder		      13
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Integrator1"
+      SID		      "28"
+      Ports		      [1, 1]
+      Position		      [2955, 2192, 3220, 2438]
+      ZOrder		      22
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Integrator2"
+      SID		      "49"
+      Ports		      [1, 1]
+      Position		      [3975, 4620, 4160, 4790]
+      ZOrder		      31
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Integrator3"
+      SID		      "54"
+      Ports		      [1, 1]
+      Position		      [3120, 5810, 3430, 6050]
+      ZOrder		      35
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Integrator4"
+      SID		      "79"
+      Ports		      [1, 1]
+      Position		      [4905, 7220, 5090, 7390]
+      ZOrder		      47
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Integrator5"
+      SID		      "108"
+      Ports		      [1, 1]
+      Position		      [4380, 9595, 4565, 9765]
+      ZOrder		      62
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Integrator6"
+      SID		      "128"
+      Ports		      [1, 1]
+      Position		      [4395, 10410, 4580, 10580]
+      ZOrder		      71
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Integrator7"
+      SID		      "141"
+      Ports		      [1, 1]
+      Position		      [4445, 11140, 4630, 11310]
+      ZOrder		      80
+    }
+    Block {
+      BlockType		      Math
+      Name		      "Math\nFunction"
+      SID		      "219"
+      Ports		      [1, 1]
+      Position		      [2785, 13340, 2815, 13370]
+      ZOrder		      117
+    }
+    Block {
+      BlockType		      Math
+      Name		      "Math\nFunction1"
+      SID		      "258"
+      Ports		      [1, 1]
+      Position		      [2915, 14040, 2945, 14070]
+      ZOrder		      133
+    }
+    Block {
+      BlockType		      Merge
+      Name		      "Merge"
+      SID		      "203"
+      Ports		      [2, 1]
+      Position		      [4440, 12800, 4480, 12840]
+      ZOrder		      108
+    }
+    Block {
+      BlockType		      Merge
+      Name		      "Merge1"
+      SID		      "272"
+      Ports		      [2, 1]
+      Position		      [2510, 14380, 2550, 14420]
+      ZOrder		      139
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product"
+      SID		      "6"
+      Ports		      [2, 1]
+      Position		      [1890, 358, 2170, 827]
+      ZOrder		      7
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product1"
+      SID		      "7"
+      Ports		      [2, 1]
+      Position		      [1875, 982, 2185, 1333]
+      ZOrder		      8
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product10"
+      SID		      "87"
+      Ports		      [2, 1]
+      Position		      [3970, 8662, 4310, 9133]
+      ZOrder		      53
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product11"
+      SID		      "95"
+      Ports		      [2, 1]
+      Position		      [2890, 9509, 3075, 9716]
+      ZOrder		      57
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product12"
+      SID		      "98"
+      Ports		      [2, 1]
+      Position		      [3415, 9564, 3600, 9771]
+      ZOrder		      58
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product13"
+      SID		      "101"
+      Ports		      [2, 1]
+      Position		      [3415, 9829, 3600, 10036]
+      ZOrder		      60
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product14"
+      SID		      "114"
+      Ports		      [2, 1]
+      Position		      [2825, 10264, 3010, 10471]
+      ZOrder		      66
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product15"
+      SID		      "119"
+      Ports		      [2, 1]
+      Position		      [3390, 10654, 3575, 10861]
+      ZOrder		      68
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product16"
+      SID		      "121"
+      Ports		      [2, 1]
+      Position		      [3390, 10344, 3575, 10551]
+      ZOrder		      69
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product17"
+      SID		      "133"
+      Ports		      [2, 1]
+      Position		      [2825, 11059, 3010, 11266]
+      ZOrder		      75
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product18"
+      SID		      "138"
+      Ports		      [2, 1]
+      Position		      [3400, 11039, 3585, 11246]
+      ZOrder		      77
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product19"
+      SID		      "139"
+      Ports		      [2, 1]
+      Position		      [3410, 11419, 3595, 11626]
+      ZOrder		      78
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product2"
+      SID		      "20"
+      Ports		      [2, 1]
+      Position		      [1360, 1743, 1555, 1987]
+      ZOrder		      16
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product20"
+      SID		      "159"
+      Ports		      [2, 1]
+      Position		      [3340, 11801, 3585, 12014]
+      ZOrder		      89
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product21"
+      SID		      "160"
+      Ports		      [2, 1]
+      Position		      [4665, 12126, 4910, 12339]
+      ZOrder		      90
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product22"
+      SID		      "174"
+      Ports		      [2, 1]
+      Position		      [5160, 11639, 5345, 11846]
+      ZOrder		      93
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product23"
+      SID		      "182"
+      Ports		      [2, 1]
+      Position		      [3685, 12751, 3930, 12964]
+      ZOrder		      98
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product24"
+      SID		      "213"
+      Ports		      [2, 1]
+      Position		      [2275, 13107, 2375, 13198]
+      ZOrder		      115
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product25"
+      SID		      "214"
+      Ports		      [2, 1]
+      Position		      [2725, 13087, 2825, 13178]
+      ZOrder		      116
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product26"
+      SID		      "221"
+      Ports		      [2, 1]
+      Position		      [2490, 13307, 2590, 13398]
+      ZOrder		      119
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product27"
+      SID		      "227"
+      Ports		      [2, 1]
+      Position		      [3345, 13462, 3445, 13553]
+      ZOrder		      120
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product28"
+      SID		      "228"
+      Ports		      [2, 1]
+      Position		      [2395, 13447, 2495, 13538]
+      ZOrder		      121
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product29"
+      SID		      "237"
+      Ports		      [2, 1]
+      Position		      [2955, 13482, 3055, 13573]
+      ZOrder		      126
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product3"
+      SID		      "24"
+      Ports		      [2, 1]
+      Position		      [1325, 2960, 1550, 3255]
+      ZOrder		      18
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product30"
+      SID		      "240"
+      Ports		      [2, 1]
+      Position		      [3740, 13442, 3840, 13533]
+      ZOrder		      128
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product31"
+      SID		      "249"
+      Ports		      [2, 1]
+      Position		      [2545, 13797, 2645, 13888]
+      ZOrder		      131
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product32"
+      SID		      "255"
+      Ports		      [2, 1]
+      Position		      [2600, 14002, 2700, 14093]
+      ZOrder		      132
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product33"
+      SID		      "260"
+      Ports		      [2, 1]
+      Position		      [3080, 13987, 3180, 14078]
+      ZOrder		      134
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product34"
+      SID		      "275"
+      Ports		      [2, 1]
+      Position		      [3515, 13947, 3615, 14038]
+      ZOrder		      140
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product35"
+      SID		      "283"
+      Ports		      [2, 1]
+      Position		      [3965, 13927, 4065, 14018]
+      ZOrder		      144
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product36"
+      SID		      "289"
+      Ports		      [2, 1]
+      Position		      [4930, 13517, 5030, 13608]
+      ZOrder		      146
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product4"
+      SID		      "38"
+      Ports		      [2, 1]
+      Position		      [2405, 4142, 2745, 4613]
+      ZOrder		      27
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product5"
+      SID		      "42"
+      Ports		      [2, 1]
+      Position		      [1730, 4852, 2070, 5323]
+      ZOrder		      28
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product6"
+      SID		      "52"
+      Ports		      [2, 1]
+      Position		      [1540, 6032, 1880, 6503]
+      ZOrder		      33
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product7"
+      SID		      "67"
+      Ports		      [2, 1]
+      Position		      [2845, 6932, 3185, 7403]
+      ZOrder		      41
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product8"
+      SID		      "70"
+      Ports		      [2, 1]
+      Position		      [2845, 7472, 3185, 7943]
+      ZOrder		      42
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product9"
+      SID		      "83"
+      Ports		      [2, 1]
+      Position		      [2950, 8772, 3290, 9243]
+      ZOrder		      50
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Subtract"
+      SID		      "11"
+      Ports		      [2, 1]
+      Position		      [2395, 642, 2725, 953]
+      ZOrder		      12
+      Inputs		      "-+"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Subtract1"
+      SID		      "23"
+      Ports		      [2, 1]
+      Position		      [2215, 2137, 2590, 2493]
+      ZOrder		      17
+      Inputs		      "+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Subtract10"
+      SID		      "220"
+      Ports		      [1, 1]
+      Position		      [2170, 13329, 2310, 13421]
+      ZOrder		      118
+      Inputs		      "-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Subtract2"
+      SID		      "36"
+      Ports		      [2, 1]
+      Position		      [1690, 4037, 2065, 4393]
+      ZOrder		      25
+      Inputs		      "+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Subtract3"
+      SID		      "44"
+      Ports		      [2, 1]
+      Position		      [3045, 4532, 3420, 4888]
+      ZOrder		      30
+      Inputs		      "+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Subtract4"
+      SID		      "53"
+      Ports		      [2, 1]
+      Position		      [2415, 5752, 2790, 6108]
+      ZOrder		      34
+      Inputs		      "+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Subtract5"
+      SID		      "72"
+      Ports		      [2, 1]
+      Position		      [3515, 7082, 3890, 7438]
+      ZOrder		      44
+      Inputs		      "+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Subtract6"
+      SID		      "99"
+      Ports		      [1, 1]
+      Position		      [2900, 9814, 3080, 9946]
+      ZOrder		      59
+      Inputs		      "-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Subtract7"
+      SID		      "117"
+      Ports		      [1, 1]
+      Position		      [2820, 10639, 3000, 10771]
+      ZOrder		      67
+      Inputs		      "-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Subtract8"
+      SID		      "134"
+      Ports		      [1, 1]
+      Position		      [2855, 11474, 3035, 11606]
+      ZOrder		      76
+      Inputs		      "-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Subtract9"
+      SID		      "161"
+      Ports		      [1, 1]
+      Position		      [4400, 12454, 4580, 12586]
+      ZOrder		      91
+      Inputs		      "-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "V_sub_i"
+      SID		      "84"
+      Position		      [2445, 8802, 2635, 8978]
+      ZOrder		      51
+      Value		      "190"
+    }
+    Block {
+      BlockType		      FunctionCaller
+      Name		      "f_sub_g"
+      SID		      "210"
+      Ports		      [1, 1]
+      Position		      [5085, 12760, 5220, 12820]
+      ZOrder		      112
+      FunctionPrototype	      "f_sub_g = f(t)"
+    }
+    Block {
+      BlockType		      FunctionCaller
+      Name		      "f_sub_m(t)"
+      SID		      "290"
+      Ports		      [1, 1]
+      Position		      [4630, 13697, 4830, 13773]
+      ZOrder		      147
+      FunctionPrototype	      "f_sub_m = f(t)"
+    }
+    Block {
+      BlockType		      If
+      Name		      "t-d"
+      SID		      "262"
+      Ports		      [2, 2]
+      Position		      [2005, 14266, 2105, 14304]
+      ZOrder		      135
+      NumInputs		      "2"
+      IfExpression	      "u1 > u2"
+    }
+    Block {
+      BlockType		      FunctionCaller
+      Name		      "u_sub_i(t)\n"
+      SID		      "25"
+      Ports		      [1, 1]
+      Position		      [1325, 995, 1620, 1145]
+      ZOrder		      19
+      FunctionPrototype	      "u_sub_i = f(t)"
+    }
+    Line {
+      ZOrder		      4
+      SrcBlock		      "Clock"
+      SrcPort		      1
+      Points		      [39, 0]
+      Branch {
+	ZOrder			347
+	Points			[0, 9199; 2258, 0; 0, 2841]
+	Branch {
+	  ZOrder		  525
+	  Points		  [0, 160; -371, 0; 0, 635]
+	  Branch {
+	    ZOrder		    557
+	    DstBlock		    "Add11"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    556
+	    Points		    [-395, 0; 0, 370]
+	    DstBlock		    "t-d"
+	    DstPort		    1
+	  }
+	}
+	Branch {
+	  ZOrder		  520
+	  Points		  [24, 0]
+	  Branch {
+	    ZOrder		    351
+	    Points		    [0, 220]
+	    DstBlock		    "Product26"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    350
+	    DstBlock		    "Product25"
+	    DstPort		    1
+	  }
+	}
+      }
+      Branch {
+	ZOrder			346
+	Points			[69, 0]
+	Branch {
+	  ZOrder		  341
+	  Points		  [0, 11287; 4518, 0; 0, 433]
+	  DstBlock		  "f_sub_g"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  340
+	  Points		  [87, 0]
+	  Branch {
+	    ZOrder		    157
+	    Points		    [0, 6275]
+	    DstBlock		    "I_sub_m(t)"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    153
+	    Points		    [59, 0]
+	    Branch {
+	      ZOrder		      586
+	      Points		      [0, 13377; 4236, 0]
+	      DstBlock		      "f_sub_m(t)"
+	      DstPort		      1
+	    }
+	    Branch {
+	      ZOrder		      585
+	      DstBlock		      "\n"
+	      DstPort		      1
+	    }
+	  }
+	}
+      }
+    }
+    Line {
+      ZOrder		      5
+      SrcBlock		      "k_sub_is1\n"
+      SrcPort		      1
+      Points		      [115, 0]
+      Branch {
+	ZOrder			57
+	Points			[0, 1215]
+	DstBlock		"Product2"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			51
+	DstBlock		"Product"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      8
+      SrcBlock		      "\n"
+      SrcPort		      1
+      Points		      [100, 0]
+      Branch {
+	ZOrder			97
+	Points			[0, 126; -128, 0; 0, 3299]
+	DstBlock		"Product4"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			96
+	DstBlock		"Product1"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      9
+      SrcBlock		      "p_sub_i"
+      SrcPort		      1
+      Points		      [105, 0]
+      Branch {
+	ZOrder			93
+	Points			[0, 324; -1462, 0; 0, 2736]
+	DstBlock		"Subtract2"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			92
+	DstBlock		"Product1"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      12
+      SrcBlock		      "Product"
+      SrcPort		      1
+      Points		      [205, 0]
+      DstBlock		      "Subtract"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      14
+      SrcBlock		      "Product1"
+      SrcPort		      1
+      Points		      [190, 0]
+      DstBlock		      "Subtract"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      15
+      SrcBlock		      "Subtract"
+      SrcPort		      1
+      Points		      [9, 0; 0, 11; 256, 0; 0, -16]
+      DstBlock		      "Integrator"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      37
+      SrcBlock		      "Integrator"
+      SrcPort		      1
+      Points		      [206, 0; 0, -700]
+      DstBlock		      "Gain"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      43
+      SrcBlock		      "Gain"
+      SrcPort		      1
+      Points		      [-1463, 0; 0, 380]
+      Branch {
+	ZOrder			83
+	Points			[0, 1330]
+	DstBlock		"Product2"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			80
+	DstBlock		"Product"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      59
+      SrcBlock		      "Product2"
+      SrcPort		      1
+      Points		      [285, 0; 0, 360]
+      DstBlock		      "Subtract1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      60
+      SrcBlock		      "k_sub_is2\n"
+      SrcPort		      1
+      DstBlock		      "Product3"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      63
+      SrcBlock		      "Product3"
+      SrcPort		      1
+      Points		      [465, 0]
+      Branch {
+	ZOrder			152
+	Points			[74, 0; 0, 3960]
+	DstBlock		"Add"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			137
+	Points			[0, -705]
+	DstBlock		"Subtract1"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      65
+      SrcBlock		      "Subtract1"
+      SrcPort		      1
+      DstBlock		      "Integrator1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      69
+      SrcBlock		      "Integrator1"
+      SrcPort		      1
+      Points		      [9, 0; 0, 1330]
+      DstBlock		      "Gain1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      73
+      SrcBlock		      "Gain1"
+      SrcPort		      1
+      Points		      [0, -35; -1108, 0; 0, -430]
+      DstBlock		      "Product3"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      87
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      DstBlock		      "Subtract2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      98
+      SrcBlock		      "Subtract2"
+      SrcPort		      1
+      Points		      [165, 0; 0, 45]
+      DstBlock		      "Product4"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      99
+      SrcBlock		      "k_sub_if"
+      SrcPort		      1
+      Points		      [135, 0]
+      Branch {
+	ZOrder			114
+	Points			[0, 1180]
+	DstBlock		"Product6"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			113
+	DstBlock		"Product5"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      101
+      SrcBlock		      "Product5"
+      SrcPort		      1
+      Points		      [155, 0]
+      Branch {
+	ZOrder			128
+	Points			[328, 0; 0, -290]
+	DstBlock		"Subtract3"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			116
+	Points			[0, 750]
+	DstBlock		"Subtract4"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      103
+      SrcBlock		      "Product4"
+      SrcPort		      1
+      Points		      [145, 0; 0, 240]
+      DstBlock		      "Subtract3"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      105
+      SrcBlock		      "Subtract3"
+      SrcPort		      1
+      Points		      [62, 0; 0, -19; 366, 0; 0, 14]
+      DstBlock		      "Integrator2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      107
+      SrcBlock		      "Integrator2"
+      SrcPort		      1
+      Points		      [140, 0]
+      DstBlock		      "Gain2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      109
+      SrcBlock		      "Gain2"
+      SrcPort		      1
+      Points		      [-2380, 0]
+      DstBlock		      "Product5"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      118
+      SrcBlock		      "Product6"
+      SrcPort		      1
+      Points		      [233, 0]
+      Branch {
+	ZOrder			150
+	Points			[0, 710]
+	DstBlock		"Add"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			140
+	Points			[30, 0; 0, -250]
+	DstBlock		"Subtract4"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      119
+      SrcBlock		      "Subtract4"
+      SrcPort		      1
+      DstBlock		      "Integrator3"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      123
+      SrcBlock		      "Integrator3"
+      SrcPort		      1
+      Points		      [9, 0; 0, 895]
+      DstBlock		      "Gain3"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      127
+      SrcBlock		      "Gain3"
+      SrcPort		      1
+      Points		      [-1695, 0]
+      DstBlock		      "Product6"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      159
+      SrcBlock		      "Add"
+      SrcPort		      1
+      Points		      [155, 0; 0, 25]
+      DstBlock		      "Product7"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      161
+      SrcBlock		      "I_sub_m(t)"
+      SrcPort		      1
+      Points		      [155, 0; 0, -60]
+      DstBlock		      "Product7"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      164
+      SrcBlock		      "Product7"
+      SrcPort		      1
+      DstBlock		      "Subtract5"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      163
+      SrcBlock		      "k_sub_e"
+      SrcPort		      1
+      DstBlock		      "Product8"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      166
+      SrcBlock		      "Product8"
+      SrcPort		      1
+      Points		      [115, 0; 0, -360]
+      DstBlock		      "Subtract5"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      168
+      SrcBlock		      "Subtract5"
+      SrcPort		      1
+      DstBlock		      "Add1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      169
+      SrcBlock		      "c_sub_i"
+      SrcPort		      1
+      DstBlock		      "Add1"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      171
+      SrcBlock		      "Add1"
+      SrcPort		      1
+      DstBlock		      "Integrator4"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      173
+      SrcBlock		      "Integrator4"
+      SrcPort		      1
+      Points		      [9, 0; 0, 895]
+      DstBlock		      "Gain4"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      175
+      SrcBlock		      "Gain4"
+      SrcPort		      1
+      Points		      [-1795, 0]
+      Branch {
+	ZOrder			180
+	Points			[0, 467; -8, 0; 0, 63]
+	DstBlock		"Divide"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			178
+	DstBlock		"Product8"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      183
+      SrcBlock		      "Product9"
+      SrcPort		      1
+      Points		      [98, 0; 0, -180]
+      DstBlock		      "Divide"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      184
+      SrcBlock		      "V_sub_i"
+      SrcPort		      1
+      Points		      [158, 0]
+      Branch {
+	ZOrder			264
+	Points			[0, 3340]
+	Branch {
+	  ZOrder		  272
+	  DstBlock		  "Divide1"
+	  DstPort		  2
+	}
+	Branch {
+	  ZOrder		  271
+	  Points		  [0, 290]
+	  DstBlock		  "Divide2"
+	  DstPort		  2
+	}
+      }
+      Branch {
+	ZOrder			263
+	DstBlock		"Product9"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      185
+      SrcBlock		      "w\n"
+      SrcPort		      1
+      Points		      [44, 0]
+      Branch {
+	ZOrder			510
+	Points			[0, 166; -738, 0; 0, 4404]
+	DstBlock		"Divide4"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			509
+	DstBlock		"Product9"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      186
+      SrcBlock		      "Divide"
+      SrcPort		      1
+      DstBlock		      "Product10"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      187
+      SrcBlock		      "10^6"
+      SrcPort		      1
+      DstBlock		      "Product10"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      188
+      SrcBlock		      "k_sub_a1"
+      SrcPort		      1
+      Points		      [158, 0; 0, 130]
+      Branch {
+	ZOrder			196
+	Points			[0, 320]
+	DstBlock		"Subtract6"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			195
+	DstBlock		"Product11"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      191
+      SrcBlock		      "S_sub_t"
+      SrcPort		      1
+      Points		      [110, 0; 0, 115]
+      DstBlock		      "Product11"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      192
+      SrcBlock		      "Product11"
+      SrcPort		      1
+      DstBlock		      "Product12"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      199
+      SrcBlock		      "Subtract6"
+      SrcPort		      1
+      DstBlock		      "Product13"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      203
+      SrcBlock		      "Product10"
+      SrcPort		      1
+      Points		      [21, 0; 0, 905; -943, 0]
+      Branch {
+	ZOrder			234
+	Points			[0, 63; -74, 0; 0, 632]
+	Branch {
+	  ZOrder		  249
+	  Points		  [0, 590]
+	  DstBlock		  "Product18"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  248
+	  DstBlock		  "Product16"
+	  DstPort		  2
+	}
+      }
+      Branch {
+	ZOrder			215
+	Points			[0, -85]
+	DstBlock		"Product12"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      205
+      SrcBlock		      "Product12"
+      SrcPort		      1
+      Points		      [95, 0; 0, -35]
+      DstBlock		      "Add2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      207
+      SrcBlock		      "Product13"
+      SrcPort		      1
+      Points		      [95, 0; 0, -210]
+      DstBlock		      "Add2"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      210
+      SrcBlock		      "Add2"
+      SrcPort		      1
+      DstBlock		      "Integrator5"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      212
+      SrcBlock		      "Integrator5"
+      SrcPort		      1
+      Points		      [15, 0]
+      DstBlock		      "Gain5"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      214
+      SrcBlock		      "Gain5"
+      SrcPort		      1
+      Points		      [-975, 0]
+      Branch {
+	ZOrder			283
+	DstBlock		"Product13"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			282
+	Points			[0, 135; -135, 0; 0, 1525]
+	DstBlock		"Product20"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      224
+      SrcBlock		      "k_sub_a2"
+      SrcPort		      1
+      Points		      [70, 0; 0, 40]
+      Branch {
+	ZOrder			227
+	Points			[0, 44; -256, 0; 0, 346]
+	DstBlock		"Subtract7"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			226
+	DstBlock		"Product14"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      225
+      SrcBlock		      "S_sub_d"
+      SrcPort		      1
+      Points		      [130, 0]
+      DstBlock		      "Product14"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      230
+      SrcBlock		      "Subtract7"
+      SrcPort		      1
+      DstBlock		      "Product15"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      231
+      SrcBlock		      "Product14"
+      SrcPort		      1
+      Points		      [185, 0; 0, 25]
+      DstBlock		      "Product16"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      235
+      SrcBlock		      "Product16"
+      SrcPort		      1
+      DstBlock		      "Add3"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      237
+      SrcBlock		      "Product15"
+      SrcPort		      1
+      Points		      [155, 0; 0, -220]
+      DstBlock		      "Add3"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      239
+      SrcBlock		      "Add3"
+      SrcPort		      1
+      DstBlock		      "Integrator6"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      241
+      SrcBlock		      "Integrator6"
+      SrcPort		      1
+      Points		      [20, 0]
+      DstBlock		      "Gain6"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      243
+      SrcBlock		      "Gain6"
+      SrcPort		      1
+      Points		      [-1020, 0]
+      DstBlock		      "Product15"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      244
+      SrcBlock		      "k_sub_a3"
+      SrcPort		      1
+      Points		      [43, 0]
+      Branch {
+	ZOrder			247
+	Points			[0, 445]
+	DstBlock		"Subtract8"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			246
+	Points			[87, 0]
+	DstBlock		"Product17"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      245
+      SrcBlock		      "S_sub_e"
+      SrcPort		      1
+      Points		      [130, 0]
+      DstBlock		      "Product17"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      250
+      SrcBlock		      "Product17"
+      SrcPort		      1
+      Points		      [370, 0]
+      DstBlock		      "Product18"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      251
+      SrcBlock		      "Subtract8"
+      SrcPort		      1
+      Points		      [183, 0; 0, -70]
+      DstBlock		      "Product19"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      252
+      SrcBlock		      "Product18"
+      SrcPort		      1
+      Points		      [175, 0; 0, 35]
+      DstBlock		      "Add4"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      255
+      SrcBlock		      "Product19"
+      SrcPort		      1
+      Points		      [327, 0; 0, -255]
+      DstBlock		      "Add4"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      256
+      SrcBlock		      "Integrator7"
+      SrcPort		      1
+      Points		      [25, 0]
+      DstBlock		      "Gain7"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      257
+      SrcBlock		      "Add4"
+      SrcPort		      1
+      DstBlock		      "Integrator7"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      259
+      SrcBlock		      "Gain7"
+      SrcPort		      1
+      Points		      [-1241, 0]
+      Branch {
+	ZOrder			300
+	Points			[0, -155]
+	DstBlock		"Product19"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			299
+	Points			[0, 149; -122, 0; 0, 881]
+	DstBlock		"Add7"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      275
+      SrcBlock		      "Divide2"
+      SrcPort		      1
+      DstBlock		      "Add5"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      276
+      SrcBlock		      "Constant1"
+      SrcPort		      1
+      DstBlock		      "Add5"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      278
+      SrcBlock		      "Add5"
+      SrcPort		      1
+      Points		      [15, 0; 0, -240]
+      DstBlock		      "Divide3"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      279
+      SrcBlock		      "Divide1"
+      SrcPort		      1
+      DstBlock		      "Divide3"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      284
+      SrcBlock		      "Divide3"
+      SrcPort		      1
+      Points		      [103, 0; 0, -50]
+      DstBlock		      "Product21"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      285
+      SrcBlock		      "F_sub_01"
+      SrcPort		      1
+      DstBlock		      "Subtract9"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      287
+      SrcBlock		      "Subtract9"
+      SrcPort		      1
+      Points		      [38, 0; 0, -235]
+      DstBlock		      "Product21"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      310
+      SrcBlock		      "Product21"
+      SrcPort		      1
+      Points		      [672, 0; 0, -45]
+      DstBlock		      "Add8"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      291
+      SrcBlock		      "Product20"
+      SrcPort		      1
+      DstBlock		      "Add6"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      293
+      SrcBlock		      "Product22"
+      SrcPort		      1
+      Points		      [118, 0; 0, 75]
+      DstBlock		      "Add6"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      295
+      SrcBlock		      "k_sub_12"
+      SrcPort		      1
+      DstBlock		      "Product22"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      309
+      SrcBlock		      "Add6"
+      SrcPort		      1
+      Points		      [108, 0; 0, 2]
+      Branch {
+	ZOrder			610
+	Points			[0, 233]
+	DstBlock		"Add8"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			609
+	Points			[100, 0; 0, -342]
+	DstBlock		"Gain9"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      301
+      SrcBlock		      "Constant2"
+      SrcPort		      1
+      DstBlock		      "Add7"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      302
+      SrcBlock		      "Add7"
+      SrcPort		      1
+      Points		      [163, 0; 0, 90]
+      DstBlock		      "Product23"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      303
+      SrcBlock		      "EGP_0"
+      SrcPort		      1
+      DstBlock		      "Product23"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      314
+      SrcBlock		      "Add8"
+      SrcPort		      1
+      Points		      [9, 0; 0, 850; -1588, 0; 0, -70]
+      DstBlock		      "Add9"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      318
+      SrcBlock		      "Add9"
+      SrcPort		      1
+      DstBlock		      "Add10"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      589
+      SrcBlock		      "Add10"
+      SrcPort		      1
+      Points		      [337, 0; 0, 285]
+      DstBlock		      "Add14"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      321
+      SrcBlock		      "Product23"
+      SrcPort		      1
+      Points		      [44, 0]
+      Branch {
+	ZOrder			334
+	Points			[0, 60]
+	DstBlock		"If Action\nSubsystem1"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			333
+	DstBlock		"If"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      332
+      SrcBlock		      "If"
+      SrcPort		      2
+      Points		      [215, 0]
+      DstBlock		      "If Action\nSubsystem1"
+      DstPort		      ifaction
+    }
+    Line {
+      ZOrder		      328
+      SrcBlock		      "If"
+      SrcPort		      1
+      Points		      [73, 0; 0, -73]
+      DstBlock		      "If Action\nSubsystem"
+      DstPort		      ifaction
+    }
+    Line {
+      ZOrder		      329
+      SrcBlock		      "Constant3"
+      SrcPort		      1
+      DstBlock		      "If Action\nSubsystem"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      331
+      SrcBlock		      "If Action\nSubsystem"
+      SrcPort		      1
+      DstBlock		      "Merge"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      335
+      SrcBlock		      "If Action\nSubsystem1"
+      SrcPort		      1
+      Points		      [15, 0; 0, -90]
+      DstBlock		      "Merge"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      336
+      SrcBlock		      "Merge"
+      SrcPort		      1
+      Points		      [43, 0; 0, 15]
+      DstBlock		      "Add9"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      339
+      SrcBlock		      "f_sub_g"
+      SrcPort		      1
+      DstBlock		      "Add10"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      342
+      SrcBlock		      "k_sub_m"
+      SrcPort		      1
+      Points		      [7, 0]
+      Branch {
+	ZOrder			349
+	Points			[0, 230]
+	DstBlock		"Subtract10"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			348
+	Points			[41, 0]
+	Branch {
+	  ZOrder		  344
+	  Points		  [0, 30]
+	  DstBlock		  "Product24"
+	  DstPort		  2
+	}
+	Branch {
+	  ZOrder		  343
+	  Points		  [77, 0]
+	  DstBlock		  "Product24"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      ZOrder		      345
+      SrcBlock		      "Product24"
+      SrcPort		      1
+      Points		      [22, 0]
+      Branch {
+	ZOrder			531
+	Points			[0, 79; -53, 0; 0, 7; -3, 0; 0, 579]
+	DstBlock		"Product31"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			529
+	DstBlock		"Product25"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      352
+      SrcBlock		      "Subtract10"
+      SrcPort		      1
+      Points		      [126, 0]
+      Branch {
+	ZOrder			539
+	Points			[0, 48; 67, 0; 0, 602]
+	DstBlock		"Product32"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			534
+	DstBlock		"Product26"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      353
+      SrcBlock		      "Product26"
+      SrcPort		      1
+      DstBlock		      "Math\nFunction"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      501
+      SrcBlock		      "Math\nFunction"
+      SrcPort		      1
+      Points		      [380, 0; 0, 130]
+      DstBlock		      "Product27"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      517
+      SrcBlock		      "Product25"
+      SrcPort		      1
+      Points		      [763, 0; 0, 330]
+      DstBlock		      "Product30"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      502
+      SrcBlock		      "Constant4"
+      SrcPort		      1
+      DstBlock		      "Product28"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      503
+      SrcBlock		      "CHO"
+      SrcPort		      1
+      DstBlock		      "Product28"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      508
+      SrcBlock		      "Product28"
+      SrcPort		      1
+      Points		      [100, 0]
+      DstBlock		      "Divide4"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      512
+      SrcBlock		      "Divide4"
+      SrcPort		      1
+      Points		      [48, 0; 0, -95; 23, 0]
+      Branch {
+	ZOrder			570
+	Points			[0, 420]
+	DstBlock		"Product34"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			566
+	DstBlock		"Product29"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      513
+      SrcBlock		      "p_sub_m"
+      SrcPort		      1
+      Points		      [66, 0]
+      Branch {
+	ZOrder			574
+	Points			[0, 290]
+	DstBlock		"Add12"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			573
+	Points			[42, 0; 0, 35]
+	DstBlock		"Product29"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      514
+      SrcBlock		      "Product29"
+      SrcPort		      1
+      DstBlock		      "Product27"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      518
+      SrcBlock		      "Product27"
+      SrcPort		      1
+      DstBlock		      "Product30"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      581
+      SrcBlock		      "Product30"
+      SrcPort		      1
+      DstBlock		      "Add13"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      527
+      SrcBlock		      "d"
+      SrcPort		      1
+      Points		      [66, 0]
+      Branch {
+	ZOrder			559
+	Points			[0, 295]
+	DstBlock		"t-d"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			558
+	DstBlock		"Add11"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      532
+      SrcBlock		      "Add11"
+      SrcPort		      1
+      Points		      [35, 0]
+      Branch {
+	ZOrder			554
+	Points			[0, 115]
+	DstBlock		"Product32"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			553
+	Points			[40, 0; 0, -90]
+	DstBlock		"Product31"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      546
+      SrcBlock		      "Product31"
+      SrcPort		      1
+      Points		      [240, 0; 0, 165]
+      DstBlock		      "Product33"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      543
+      SrcBlock		      "Product32"
+      SrcPort		      1
+      Points		      [103, 0; 0, 5]
+      DstBlock		      "Math\nFunction1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      547
+      SrcBlock		      "Math\nFunction1"
+      SrcPort		      1
+      DstBlock		      "Product33"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      551
+      SrcBlock		      "t-d"
+      SrcPort		      1
+      Points		      [9, 0; 0, -159; 261, 0]
+      DstBlock		      "If Action\nSubsystem2"
+      DstPort		      ifaction
+    }
+    Line {
+      ZOrder		      560
+      SrcBlock		      "t-d"
+      SrcPort		      2
+      Points		      [42, 0; 0, -43; 58, 0]
+      DstBlock		      "If Action\nSubsystem3"
+      DstPort		      ifaction
+    }
+    Line {
+      ZOrder		      561
+      SrcBlock		      "Constant5"
+      SrcPort		      1
+      DstBlock		      "If Action\nSubsystem3"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      562
+      SrcBlock		      "If Action\nSubsystem2"
+      SrcPort		      1
+      Points		      [43, 0; 0, 105]
+      DstBlock		      "Merge1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      563
+      SrcBlock		      "If Action\nSubsystem3"
+      SrcPort		      1
+      Points		      [104, 0; 0, 35]
+      DstBlock		      "Merge1"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      582
+      SrcBlock		      "Merge1"
+      SrcPort		      1
+      Points		      [1642, 0; 0, -815]
+      DstBlock		      "Add13"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      569
+      SrcBlock		      "Product33"
+      SrcPort		      1
+      Points		      [275, 0; 0, -20]
+      DstBlock		      "Product34"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      576
+      SrcBlock		      "Product34"
+      SrcPort		      1
+      DstBlock		      "Product35"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      572
+      SrcBlock		      "Constant6"
+      SrcPort		      1
+      Points		      [55, 0]
+      DstBlock		      "Add12"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      577
+      SrcBlock		      "Add12"
+      SrcPort		      1
+      Points		      [420, 0; 0, 215]
+      DstBlock		      "Product35"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      579
+      SrcBlock		      "Product35"
+      SrcPort		      1
+      Points		      [9, 0; 0, 388; -1748, 0; 0, -78]
+      DstBlock		      "If Action\nSubsystem2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      584
+      SrcBlock		      "Add13"
+      SrcPort		      1
+      DstBlock		      "Product36"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      587
+      SrcBlock		      "f_sub_m(t)"
+      SrcPort		      1
+      Points		      [45, 0; 0, -150]
+      DstBlock		      "Product36"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      590
+      SrcBlock		      "Product36"
+      SrcPort		      1
+      Points		      [655, 0; 0, -355]
+      DstBlock		      "Add14"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      598
+      SrcBlock		      "Add14"
+      SrcPort		      1
+      Points		      [9, 0; 0, 250]
+      DstBlock		      "Gain8"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      601
+      SrcBlock		      "Gain8"
+      SrcPort		      1
+      Points		      [-2759, 0; 0, -995]
+      Branch {
+	ZOrder			607
+	Points			[0, -290]
+	Branch {
+	  ZOrder		  604
+	  Points		  [0, -170]
+	  DstBlock		  "Product20"
+	  DstPort		  2
+	}
+	Branch {
+	  ZOrder		  603
+	  DstBlock		  "Divide1"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	ZOrder			606
+	DstBlock		"Divide2"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      611
+      SrcBlock		      "Gain9"
+      SrcPort		      1
+      Points		      [-1077, 0; 0, 165]
+      DstBlock		      "Product22"
+      DstPort		      1
+    }
+    Annotation {
+      SID		      "308"
+      Name		      "0"
+      Position		      [2147, 14360, 2155, 14375]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -1
+    }
+    Annotation {
+      SID		      "307"
+      Name		      "false"
+      Position		      [2168, 14229, 2192, 14244]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -2
+    }
+    Annotation {
+      SID		      "306"
+      Name		      "true"
+      Position		      [2168, 14099, 2188, 14114]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -3
+    }
+    Annotation {
+      SID		      "305"
+      Name		      "t"
+      Position		      [1963, 14257, 1968, 14272]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -4
+    }
+    Annotation {
+      SID		      "304"
+      Name		      "d"
+      Position		      [1958, 14305, 1966, 14320]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -5
+    }
+    Annotation {
+      SID		      "303"
+      Name		      "Q_sub_2"
+      Position		      [5074, 11495, 5118, 11510]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -6
+    }
+    Annotation {
+      SID		      "302"
+      Name		      "Q_sub_2"
+      Position		      [5053, 11675, 5097, 11690]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -7
+    }
+    Annotation {
+      SID		      "300"
+      Name		      "Q_sub_1"
+      Position		      [5706, 13394, 5750, 13409]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -8
+    }
+    Annotation {
+      SID		      "298"
+      Name		      "Q_sub_1"
+      Position		      [3173, 12396, 3217, 12411]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -9
+    }
+    Annotation {
+      SID		      "297"
+      Name		      "Q_sub_1"
+      Position		      [3211, 12103, 3255, 12118]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -10
+    }
+    Annotation {
+      SID		      "296"
+      Name		      "Q_sub_1"
+      Position		      [3215, 11941, 3259, 11956]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -11
+    }
+    Annotation {
+      SID		      "295"
+      Name		      "-F_sub_01*(Q_sub_1/V)/(1+Q_sub_1/V)-x_sub_1*Q_sub_1+k_sub_12*Q_sub_2+EGP_0(1-x_sub_3)+f_sub_g+U_sub"
+      "_m"
+      Position		      [6356, 13149, 6913, 13164]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -12
+    }
+    Annotation {
+      SID		      "293"
+      Name		      "(U_sub_m1+U_sub_m2)*f_sub_m=U_sub_m"
+      Position		      [5056, 13546, 5264, 13561]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -13
+    }
+    Annotation {
+      SID		      "292"
+      Name		      "f_sub_m"
+      Position		      [4885, 13568, 4927, 13583]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -14
+    }
+    Annotation {
+      SID		      "291"
+      Name		      "t"
+      Position		      [4619, 13716, 4624, 13731]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -15
+    }
+    Annotation {
+      SID		      "288"
+      Name		      "(U_sub_m1 + U_sub_m2)"
+      Position		      [4595, 13515, 4715, 13530]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -16
+    }
+    Annotation {
+      SID		      "286"
+      Name		      "U_sub_m2"
+      Position		      [2732, 14385, 2784, 14400]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -17
+    }
+    Annotation {
+      SID		      "285"
+      Name		      "(t-d)*(k_sub_m^2)*(exp((-k_sub_m)*(t-d)))*((CHO*5551)/w)*(1-p_sub_m)"
+      Position		      [2781, 14341, 3106, 14356]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -18
+    }
+    Annotation {
+      SID		      "284"
+      Name		      "(1-p_sub_m)"
+      Position		      [3846, 13929, 3906, 13944]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -19
+    }
+    Annotation {
+      SID		      "282"
+      Name		      "(1-p_sub_m)"
+      Position		      [3396, 13706, 3456, 13721]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -20
+    }
+    Annotation {
+      SID		      "281"
+      Name		      "p_sub_m"
+      Position		      [3023, 13737, 3068, 13752]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -21
+    }
+    Annotation {
+      SID		      "280"
+      Name		      "1"
+      Position		      [3189, 13676, 3197, 13691]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -22
+    }
+    Annotation {
+      SID		      "277"
+      Name		      "(t-d)*(k_sub_m^2)*(exp((-k_sub_m)*(t-d)))*((CHO*5551)/w)"
+      Position		      [3688, 13977, 3951, 13992]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -23
+    }
+    Annotation {
+      SID		      "274"
+      Name		      "0"
+      Position		      [2398, 14395, 2406, 14410]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -24
+    }
+    Annotation {
+      SID		      "273"
+      Name		      "(t-d)*(k_sub_m^2)(*exp((-k_sub_m)*(t-d)))"
+      Position		      [2421, 14269, 2608, 14284]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -25
+    }
+    Annotation {
+      SID		      "261"
+      Name		      "(t-d)*(k_sub_m^2)*(exp((-k_sub_m)*(t-d)))"
+      Position		      [3222, 14015, 3409, 14030]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -26
+    }
+    Annotation {
+      SID		      "259"
+      Name		      "exp((-k_sub_m)*(t-d))"
+      Position		      [2963, 14032, 3060, 14047]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -27
+    }
+    Annotation {
+      SID		      "257"
+      Name		      "(-k_sub_m)*(t-d)"
+      Position		      [2758, 14024, 2832, 14039]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -28
+    }
+    Annotation {
+      SID		      "256"
+      Name		      "(t-d)"
+      Position		      [2548, 14050, 2568, 14065]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -29
+    }
+    Annotation {
+      SID		      "253"
+      Name		      "-k_sub_m"
+      Position		      [2532, 14002, 2578, 14017]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -30
+    }
+    Annotation {
+      SID		      "252"
+      Name		      "k_sub_m^2)"
+      Position		      [2379, 13805, 2436, 13820]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -31
+    }
+    Annotation {
+      SID		      "251"
+      Name		      "(t-d)*(k_sub_m^2)"
+      Position		      [2669, 13825, 2751, 13840]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -32
+    }
+    Annotation {
+      SID		      "250"
+      Name		      "(t-d)"
+      Position		      [2396, 13941, 2416, 13956]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -33
+    }
+    Annotation {
+      SID		      "247"
+      Name		      "d"
+      Position		      [1955, 13985, 1963, 14000]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -34
+    }
+    Annotation {
+      SID		      "246"
+      Name		      "t"
+      Position		      [2098, 13891, 2103, 13906]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -35
+    }
+    Annotation {
+      SID		      "243"
+      Name		      "((k_sub_m^2)*t)*exp(-k_sub_m*t)*((CHO*5551)/w)*p_sub_m"
+      Position		      [3878, 13468, 4152, 13483]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -36
+    }
+    Annotation {
+      SID		      "242"
+      Name		      "exp(-k_sub_m*t)*((CHO*5551)/w)*p_sub_m"
+      Position		      [3462, 13486, 3661, 13501]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -37
+    }
+    Annotation {
+      SID		      "241"
+      Name		      "((k_sub_m^2)*t)"
+      Position		      [3610, 13447, 3683, 13462]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -38
+    }
+    Annotation {
+      SID		      "239"
+      Name		      "((CHO*5551)/w)*p_sub_m"
+      Position		      [3107, 13512, 3228, 13527]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -39
+    }
+    Annotation {
+      SID		      "236"
+      Name		      "(CHO*5551)/w"
+      Position		      [2871, 13529, 2939, 13544]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -40
+    }
+    Annotation {
+      SID		      "233"
+      Name		      "CHO*5551"
+      Position		      [2559, 13478, 2611, 13493]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -41
+    }
+    Annotation {
+      SID		      "232"
+      Name		      "5551"
+      Position		      [2349, 13500, 2375, 13515]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -42
+    }
+    Annotation {
+      SID		      "231"
+      Name		      "CHO"
+      Position		      [2256, 13457, 2280, 13472]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -43
+    }
+    Annotation {
+      SID		      "226"
+      Name		      "(k_sub_m^2*t)"
+      Position		      [2912, 13118, 2979, 13133]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -44
+    }
+    Annotation {
+      SID		      "225"
+      Name		      "exp(-k_sub_m*t)"
+      Position		      [2860, 13337, 2936, 13352]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -1
+    }
+    Annotation {
+      SID		      "224"
+      Name		      "-k_sub_m*t"
+      Position		      [2662, 13337, 2715, 13352]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -2
+    }
+    Annotation {
+      SID		      "223"
+      Name		      "t"
+      Position		      [2458, 13312, 2463, 13327]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -3
+    }
+    Annotation {
+      SID		      "222"
+      Name		      "-k_sub_m"
+      Position		      [2354, 13357, 2400, 13372]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -4
+    }
+    Annotation {
+      SID		      "218"
+      Name		      "t"
+      Position		      [2556, 13085, 2561, 13100]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -5
+    }
+    Annotation {
+      SID		      "217"
+      Name		      "k_sub_m^2"
+      Position		      [2516, 13141, 2570, 13156]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -6
+    }
+    Annotation {
+      SID		      "216"
+      Name		      "k_sub_m"
+      Position		      [2202, 13155, 2245, 13170]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -7
+    }
+    Annotation {
+      SID		      "215"
+      Name		      "k_sub_m"
+      Position		      [2206, 13124, 2249, 13139]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -8
+    }
+    Annotation {
+      SID		      "195"
+      Name		      "-F_sub_01*(Q_sub_1/V)/(1+Q_sub_1/V)-x_sub_1*Q_sub_1+k_sub_12*Q_sub_2+EGP_0(1-x_sub_3)+f_sub_g"
+      Position		      [5498, 12810, 6005, 12825]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -9
+    }
+    Annotation {
+      SID		      "192"
+      Name		      "-F_sub_01*(Q_sub_1/V)/(1+Q_sub_1/V)-x_sub_1*Q_sub_1+k_sub_12*Q_sub_2+EGP_0(1-x_sub_3)"
+      Position		      [4803, 12851, 5267, 12866]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -10
+    }
+    Annotation {
+      SID		      "190"
+      Name		      "-F_sub_01*(Q_sub_1/V)/(1+Q_sub_1/V)-x_sub_1*Q_sub_1+k_sub_12*Q_sub_2"
+      Position		      [6154, 12117, 6524, 12132]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -11
+    }
+    Annotation {
+      SID		      "188"
+      Name		      "EGP_0*(1-x_sub_3)"
+      Position		      [3940, 12820, 4034, 12835]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -12
+    }
+    Annotation {
+      SID		      "187"
+      Name		      "1"
+      Position		      [3037, 12645, 3045, 12660]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -13
+    }
+    Annotation {
+      SID		      "186"
+      Name		      "EGP_0"
+      Position		      [3593, 12883, 3629, 12898]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -14
+    }
+    Annotation {
+      SID		      "185"
+      Name		      "x_sub_3"
+      Position		      [3047, 12778, 3088, 12793]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -15
+    }
+    Annotation {
+      SID		      "184"
+      Name		      "1-x_sub_3"
+      Position		      [3392, 12692, 3442, 12707]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -16
+    }
+    Annotation {
+      SID		      "178"
+      Name		      "-x_sub_1*Q_sub_1+k_sub_12*Q_sub_2"
+      Position		      [5769, 11842, 5955, 11857]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -17
+    }
+    Annotation {
+      SID		      "177"
+      Name		      "x_sub_1*Q_sub_1"
+      Position		      [3888, 11877, 3975, 11892]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -18
+    }
+    Annotation {
+      SID		      "176"
+      Name		      "k_sub_12*Q_sub_2"
+      Position		      [5372, 11716, 5464, 11731]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -19
+    }
+    Annotation {
+      SID		      "172"
+      Name		      "-F_sub_01*(Q_sub_1/V)/(1+Q_sub_1/V)"
+      Position		      [4991, 12207, 5177, 12222]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -20
+    }
+    Annotation {
+      SID		      "171"
+      Name		      "(Q_sub_1/V)/(1+Q_sub1/V)"
+      Position		      [4466, 12202, 4593, 12217]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -21
+    }
+    Annotation {
+      SID		      "170"
+      Name		      "Q_sub_1/V + 1"
+      Position		      [4134, 12438, 4206, 12453]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -22
+    }
+    Annotation {
+      SID		      "169"
+      Name		      "Q_sub_1/V"
+      Position		      [3856, 12160, 3910, 12175]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -23
+    }
+    Annotation {
+      SID		      "168"
+      Name		      "x_sub_1"
+      Position		      [3296, 11833, 3337, 11848]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -24
+    }
+    Annotation {
+      SID		      "167"
+      Name		      "V"
+      Position		      [3203, 12216, 3212, 12231]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -25
+    }
+    Annotation {
+      SID		      "166"
+      Name		      "V"
+      Position		      [3186, 12501, 3195, 12516]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -26
+    }
+    Annotation {
+      SID		      "165"
+      Name		      "Q_sub_1/V"
+      Position		      [3658, 12453, 3712, 12468]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -27
+    }
+    Annotation {
+      SID		      "164"
+      Name		      "-F_sub_01"
+      Position		      [4586, 12270, 4637, 12285]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -28
+    }
+    Annotation {
+      SID		      "162"
+      Name		      "F_sub_01"
+      Position		      [4337, 12503, 4385, 12518]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -29
+    }
+    Annotation {
+      SID		      "149"
+      Name		      "x_sub_3"
+      Position		      [3542, 11713, 3583, 11728]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -30
+    }
+    Annotation {
+      SID		      "148"
+      Name		      "-k_sub_a3*x_sub_3+k_sub_a3*S_sub_e*I_sub_p"
+      Position		      [4122, 11210, 4350, 11225]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -31
+    }
+    Annotation {
+      SID		      "147"
+      Name		      "-k_sub_a3*x_sub_3"
+      Position		      [3658, 11508, 3750, 11523]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -32
+    }
+    Annotation {
+      SID		      "146"
+      Name		      "k_sub_a3*S_sub_e*I_sub_p"
+      Position		      [3645, 11126, 3777, 11141]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -33
+    }
+    Annotation {
+      SID		      "145"
+      Name		      "x_sub_3"
+      Position		      [3274, 11555, 3315, 11570]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -34
+    }
+    Annotation {
+      SID		      "144"
+      Name		      "-k_sub_a3"
+      Position		      [3095, 11520, 3144, 11535]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -35
+    }
+    Annotation {
+      SID		      "143"
+      Name		      "k_sub_a3*S_sub_e"
+      Position		      [3113, 11138, 3204, 11153]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -36
+    }
+    Annotation {
+      SID		      "137"
+      Name		      "S_sub_e"
+      Position		      [2740, 11228, 2783, 11243]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -37
+    }
+    Annotation {
+      SID		      "136"
+      Name		      "k_sub_a3"
+      Position		      [2743, 11520, 2789, 11535]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -38
+    }
+    Annotation {
+      SID		      "135"
+      Name		      "k_sub_a3"
+      Position		      [2737, 11081, 2783, 11096]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -39
+    }
+    Annotation {
+      SID		      "130"
+      Name		      "x_sub_2"
+      Position		      [3564, 10957, 3605, 10972]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -40
+    }
+    Annotation {
+      SID		      "127"
+      Name		      "-k_sub_a2*x_sub_2+k_sub_a2*S_sub_d*I_sub_p"
+      Position		      [4094, 10473, 4322, 10488]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -41
+    }
+    Annotation {
+      SID		      "126"
+      Name		      "-k_sub_a2*x_sub_2"
+      Position		      [3613, 10745, 3753, 10765]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      on
+      FixedWidth	      on
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -42
+    }
+    Annotation {
+      SID		      "125"
+      Name		      "k_sub_a2*S_sub_d*I_sub_p"
+      Position		      [3615, 10436, 3747, 10451]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -43
+    }
+    Annotation {
+      SID		      "123"
+      Name		      "k_sub_a2*S_sub_d"
+      Position		      [3079, 10354, 3170, 10369]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -44
+    }
+    Annotation {
+      SID		      "122"
+      Name		      "I_sub_p"
+      Position		      [3341, 10473, 3380, 10488]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -45
+    }
+    Annotation {
+      SID		      "120"
+      Name		      "-k_sub_a2"
+      Position		      [3200, 10678, 3249, 10693]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -46
+    }
+    Annotation {
+      SID		      "118"
+      Name		      "k_sub_a2"
+      Position		      [2670, 10686, 2716, 10701]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -47
+    }
+    Annotation {
+      SID		      "116"
+      Name		      "S_sub_d"
+      Position		      [2709, 10405, 2752, 10420]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -48
+    }
+    Annotation {
+      SID		      "115"
+      Name		      "k_sub_a2"
+      Position		      [2709, 10258, 2755, 10273]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -49
+    }
+    Annotation {
+      SID		      "111"
+      Name		      "x_sub_1"
+      Position		      [3606, 10169, 3647, 10184]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -50
+    }
+    Annotation {
+      SID		      "110"
+      Name		      "-k_sub_a1"
+      Position		      [3255, 9859, 3304, 9874]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -51
+    }
+    Annotation {
+      SID		      "107"
+      Name		      "-k_sub_a1*x_sub_1+k_sub_a1*S_sub_t*I_sub_p\n"
+      Position		      [3991, 9656, 4216, 9684]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -52
+    }
+    Annotation {
+      SID		      "106"
+      Name		      "-k_sub_a1*x_sub_1\n"
+      Position		      [3617, 9923, 3709, 9951]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -53
+    }
+    Annotation {
+      SID		      "105"
+      Name		      "I_sub_p"
+      Position		      [4223, 9781, 4262, 9796]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -54
+    }
+    Annotation {
+      SID		      "104"
+      Name		      "k_sub_a1*S_sub_t*I_sub_p"
+      Position		      [3618, 9646, 3747, 9661]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -55
+    }
+    Annotation {
+      SID		      "103"
+      Name		      "I_sub_p"
+      Position		      [3623, 9781, 3662, 9796]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -56
+    }
+    Annotation {
+      SID		      "100"
+      Name		      "k_sub_a1\n"
+      Position		      [2845, 9852, 2891, 9880]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -57
+    }
+    Annotation {
+      SID		      "97"
+      Name		      "S_sub_t"
+      Position		      [2725, 9535, 2765, 9550]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -58
+    }
+    Annotation {
+      SID		      "96"
+      Name		      "k_sub_a1"
+      Position		      [2711, 9415, 2757, 9430]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -59
+    }
+    Annotation {
+      SID		      "92"
+      Name		      "Q_sub_i/V_sub_i*w"
+      Position		      [3866, 8762, 3959, 8777]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -60
+    }
+    Annotation {
+      SID		      "91"
+      Name		      "Q_sub_i"
+      Position		      [3236, 8709, 3277, 8724]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -61
+    }
+    Annotation {
+      SID		      "90"
+      Name		      "w"
+      Position		      [2787, 9108, 2796, 9123]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -62
+    }
+    Annotation {
+      SID		      "89"
+      Name		      "V_sub_i"
+      Position		      [2749, 8870, 2789, 8885]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -63
+    }
+    Annotation {
+      SID		      "86"
+      Name		      "V_sub_i*w"
+      Position		      [3331, 8990, 3382, 9005]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -64
+    }
+    Annotation {
+      SID		      "81"
+      Name		      "Q_sub_i"
+      Position		      [3251, 8183, 3292, 8198]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -65
+    }
+    Annotation {
+      SID		      "78"
+      Name		      "((Q_sub_is2*k_sub_is2+Q_sub_if2*k_sub_if)*I_sub_m)-Q_sub_i*k_sub_e+c_sub_i"
+      Position		      [4601, 7284, 4979, 7299]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -66
+    }
+    Annotation {
+      SID		      "77"
+      Name		      "((Q_sub_is2*k_sub_is2+Q_sub_if2*k_sub_if)*I_sub_m)-Q_subI*k_sub_e"
+      Position		      [3922, 7244, 4252, 7259]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -67
+    }
+    Annotation {
+      SID		      "74"
+      Name		      "(Q_sub_is2*k_sub_is2+Q_sub_if2*k_sub_if)*I_sub_m"
+      Position		      [3208, 7149, 3454, 7164]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -68
+    }
+    Annotation {
+      SID		      "73"
+      Name		      "Q_sub_i*k_sub_e"
+      Position		      [3196, 7694, 3304, 7709]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      on
+      FixedWidth	      on
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -69
+    }
+    Annotation {
+      SID		      "69"
+      Name		      "I_sub_m"
+      Position		      [2583, 7325, 2625, 7340]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -70
+    }
+    Annotation {
+      SID		      "68"
+      Name		      "Q_sub_is2*k_sub_is2+Q_sub_if2*k_sub_if"
+      Position		      [2551, 7009, 2747, 7024]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -71
+    }
+    Annotation {
+      SID		      "65"
+      Name		      "Q_sub_is2*k_sub_is2"
+      Position		      [2168, 7044, 2268, 7059]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -72
+    }
+    Annotation {
+      SID		      "64"
+      Name		      "Q_sub_if2*k_sub_if"
+      Position		      [2172, 6956, 2264, 6971]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -73
+    }
+    Annotation {
+      SID		      "60"
+      Name		      "Q_sub_if1*k_sub_if-Q_sub_if2*k_sub_if"
+      Position		      [2868, 5905, 3053, 5920]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -74
+    }
+    Annotation {
+      SID		      "59"
+      Name		      "Q_sub_if1*k_sub_if"
+      Position		      [2278, 5823, 2370, 5838]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -75
+    }
+    Annotation {
+      SID		      "58"
+      Name		      "Q_sub_if2*k_sub_if"
+      Position		      [1974, 6247, 2066, 6262]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -76
+    }
+    Annotation {
+      SID		      "57"
+      Name		      "Q_sub_if2"
+      Position		      [1669, 6807, 1719, 6822]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -77
+    }
+    Annotation {
+      SID		      "56"
+      Name		      "k_sub_if"
+      Position		      [1309, 6136, 1349, 6151]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -78
+    }
+    Annotation {
+      SID		      "51"
+      Name		      "Q_sub_if1\n"
+      Position		      [4251, 4683, 4301, 4711]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -79
+    }
+    Annotation {
+      SID		      "48"
+      Name		      "(u_sub_i(t))*(1-p_sub_i)-Q_sub_i1f*k_sub_if"
+      Position		      [3538, 4701, 3741, 4716]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -80
+    }
+    Annotation {
+      SID		      "47"
+      Name		      "Q_sub_if1*k_sub_if"
+      Position		      [2335, 5068, 2427, 5083]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -81
+    }
+    Annotation {
+      SID		      "46"
+      Name		      "(u_sub_i(t))*(1-p_sub_i)"
+      Position		      [2816, 4357, 2926, 4372]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -82
+    }
+    Annotation {
+      SID		      "45"
+      Name		      "u_sub_i(t)"
+      Position		      [2178, 4476, 2226, 4491]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -83
+    }
+    Annotation {
+      SID		      "41"
+      Name		      "1"
+      Position		      [1362, 4106, 1370, 4121]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -84
+    }
+    Annotation {
+      SID		      "40"
+      Name		      "p_sub_i"
+      Position		      [824, 4291, 863, 4306]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -85
+    }
+    Annotation {
+      SID		      "39"
+      Name		      "(1-p_sub_i)"
+      Position		      [2151, 4190, 2205, 4205]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -86
+    }
+    Annotation {
+      SID		      "34"
+      Name		      "Q_sub_is1*k_sub_is1-Q_sub_is2*k_sub_is2"
+      Position		      [2687, 2270, 2888, 2285]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -87
+    }
+    Annotation {
+      SID		      "33"
+      Name		      "Q_sub_is2*k_sub_is2"
+      Position		      [1711, 3090, 1811, 3105]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -88
+    }
+    Annotation {
+      SID		      "32"
+      Name		      "Q_sub_is2"
+      Position		      [1160, 3163, 1211, 3178]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -89
+    }
+    Annotation {
+      SID		      "31"
+      Name		      "Q_sub_is1*k_sub_is1"
+      Position		      [1607, 1848, 1707, 1863]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -90
+    }
+    Annotation {
+      SID		      "30"
+      Name		      "k_sub_is1"
+      Position		      [1227, 1929, 1274, 1944]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -91
+    }
+    Annotation {
+      SID		      "21"
+      Name		      "Q_sub_is1\n"
+      Position		      [1102, 1776, 1153, 1804]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -92
+    }
+    Annotation {
+      SID		      "19"
+      Name		      "Q_sub_is1"
+      Position		      [2473, 58, 2524, 73]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -93
+    }
+    Annotation {
+      SID		      "15"
+      Name		      "(u_sub_i(t)*p_sub_i)-(Q_sub_is1(t)*k_sub_is1)"
+      Position		      [2748, 786, 2959, 801]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -94
+    }
+    Annotation {
+      SID		      "14"
+      Name		      "u_sub_i(t)*p_sub_i"
+      Position		      [2221, 1143, 2310, 1158]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -95
+    }
+    Annotation {
+      SID		      "13"
+      Name		      "Q_sub_is1(t)*k_sub_is1"
+      Position		      [2261, 575, 2370, 590]
+      InternalMargins	      [0, 0, 0, 0]
+      FixedHeight	      off
+      FixedWidth	      off
+      HorizontalAlignment     "left"
+      VerticalAlignment	      "top"
+      ZOrder		      -96
+    }
+  }
+}
