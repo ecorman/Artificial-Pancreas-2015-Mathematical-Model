@@ -134,11 +134,11 @@ big_mat = [k_sub_12;k_sub_a1;k_sub_a2;k_sub_a3;S_sub_T;S_sub_D;S_sub_E;...
 P_mean = [-2.8,-5.7,-2.9,-3.7,3.7,1.6,6,9.7,6.4];
 
 % prec_shrink, shrinkage of the big_mat data set to a precision matrix
-prec_shrink = covshrinkKPM(big_mat',1);
+cov_shrink = covshrinkKPM(big_mat',1);
 
 % diag_val, vector of the diagonal values of the covariance matrix
 % (inverse of precision matrix)
-diag_val = diag(inv(prec_shrink))';
+diag_val = diag((cov_shrink))';
 
 % a, multivariate normal random number generation based on mean P_mean
 % and the diagonal of the covariance (inverse precision) matrix
@@ -164,4 +164,5 @@ v_GMM = fitgmdist(v,14,'CovarianceType','diagonal','SharedCov',...
   
 prec_mat = igmrfprec([10,10],1);
 
-[V,lambda] = eigs(prec_mat);
+
+
