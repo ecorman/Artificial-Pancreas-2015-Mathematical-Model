@@ -591,11 +591,11 @@ log_sub_of_d_guess = 2.3; % [min]
 log_Q_sub_b_guess = -0.7; % [U]
 
 % Initial guess for log_p_sub_i, 
-log_p_sub_i = 0; 
+log_p_sub_i_guess = 0; 
 
 % Initial guess for log_p_sub_m, portion of meal carbohydrates absorbed in
 % the first chanel
- log_p_sub_m = 0; % [unitless]
+ log_p_sub_m_guess = 0; % [unitless]
  
   
 
