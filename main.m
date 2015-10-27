@@ -335,22 +335,12 @@ S_super_f_sub_IT = [29.4,18.7,81.2,86.1,72.4,19.1]; % [10^-4/min/mU/L]
 % From: Partitioning glucose distribution/transport, disposal, and 
 % endogenous production during IVGTT
 k_sub_a1 = (k_sub_b1./S_super_f_sub_IT); % [1/min]
- 
-% mean of k_sub_a1 for 6 subjects, deactivation rate constant
-% From: Partitioning glucose distribution/transport, disposal, and 
-% endogenous production during IVGTT
-% REMOVE THIS!
-mean_k_sub_a1 = mean(k_sub_a1); % [1/min]
 
 % k_sub_b2, activation rate constant, for 6 subjects, 
 % used to find k_sub_a2
 % From: Partitioning glucose distribution/transport, disposal, and 
 % endogenous production during IVGTT
 k_sub_b2 = [0.0752,0.0231,0.0495,0.0302,0.1631,0.0689]; % [min^-2/mU/L]
-
-% mean of k_sub_b2 for 6 subjects, activation rate constant
-% REMOVE THIS!
-mean_k_sub_b2 = mean(k_sub_b2); % [min^-2/mU/L]
 
 % S_super_f_sub_ID data for 6 subjects, used to find k_sub_a2
 % From: Partitioning glucose distribution/transport, disposal, and 
@@ -361,12 +351,6 @@ S_super_f_sub_ID = [0.9,6.1,20.1,4.7,15.3,2.2]; % [10^-4/min/mU/L]
 % From: Partitioning glucose distribution/transport, disposal, and 
 % endogenous production during IVGTT
 k_sub_a2 = (k_sub_b2./S_super_f_sub_ID); % [1/min]
-
-% mean of k_sub_a2, deactivation rate constant, for 6 subjects
-% From: Partitioning glucose distribution/transport, disposal, and 
-% endogenous production during IVGTT
-% REMOVE THIS!
-mean_k_sub_a2 = mean(k_sub_a2); % [1/min]
 
 % k_sub_b3, activation rate constant, data for 6 subjects, used to find 
 % k_sub_a3
@@ -384,24 +368,11 @@ S_super_f_sub_IE = [401,379,578,720,961,81]; % [10^-4/mU/L]
 % endogenous production during IVGTT
 k_sub_a3 = (k_sub_b3./S_super_f_sub_IE); % [1/min]
 
-% mean of k_sub_a3, deactivation rate constant, for 6 subjects
-% From: Partitioning glucose distribution/transport, disposal, and 
-% endogenous production during IVGTT
-% REMOVE THIS!
-mean_k_sub_a3 = mean(k_sub_a3); % [1/min]
-
 % S_sub_T, insulin sensitivity of insulin distribution/transport,
 % data for 6 subjects
 % From: Partitioning glucose distribution/transport, disposal, and 
 % endogenous production during IVGTT
 S_sub_T = [1.2,10.2,27.1,9.1,16.8,4.7]; % [mL*min^-1*kg^-1/mU/L]
-
-% mean S_sub_T, insulin sensitivity of insulin distribution/transport,
-% for 6 subjects
-% From: Partitioning glucose distribution/transport, disposal, and 
-% endogenous production during IVGTT
-% REMOVE THIS!
-mean_S_sub_T = mean(S_sub_T); % [mL*min^-1*kg^-1/mU/L]
 
 % S_sub_D, insulin sensitivity of glucose intracellular disposal
 % data for 6 subjects
@@ -409,24 +380,11 @@ mean_S_sub_T = mean(S_sub_T); % [mL*min^-1*kg^-1/mU/L]
 % endogenous production during IVGTT
 S_sub_D = [4.7,4.7,27.9,15.0,7.3,2.6]; % [mL*min^-1*kg^-1/mU/L]
 
-% mean S_sub_D, insulin sensitivity of glucose intracellular disposal
-% for 6 subjects
-% From: Partitioning glucose distribution/transport, disposal, and 
-% endogenous production during IVGTT
-% REMOVE THIS!
-mean_S_sub_D = mean(S_sub_D); % [mL*min^-1*kg^-1/mU/L]
-
 % S_sub_E, insulin sensitivity of endogenous glucose production [EGP]
 % data for 6 subjects
 % From: Partitioning glucose distribution/transport, disposal, and 
 % endogenous production during IVGTT
 S_sub_E = [9.0,6.8,14.3,15.2,19.9,1.6]; % [mL*min^-1*kg^-1/mU/L]
-
-% mean S_sub_E, insulin sensitivity of endogenous glucose production [EGP]
-% From: Partitioning glucose distribution/transport, disposal, and 
-% endogenous production during IVGTT
-% REMOVE THIS!
-mean_S_sub_E = mean(S_sub_E); % [mL*min^-1*kg^-1/mU/L]
 
 % EGP_0, endogenous glucose production extrapolated to zero insulin
 % concentration, data for 6 subjects
