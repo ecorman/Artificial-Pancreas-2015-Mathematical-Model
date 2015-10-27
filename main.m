@@ -442,26 +442,6 @@ v_GMM = fitgmdist(v,14,'CovarianceType','diagonal','SharedCov',...
 % THIS WILL NEED TO BE MODIFIED/DELETED
  [idx_v,nlogl_v,P_v,logpdf_v] = cluster(v_GMM,v);
 
-% Creating a precision matrix for f_sub_g_of_t that has the dimensions
-% equal to the length of random walk for the intrinsic Gaussian Conditional
-% AutoRegression, used in Glucose Kinetics Subsystem
-% REMOVE THIS!
-f_sub_g_of_t_prec_mat = igmrfprec([15,15],1);
-
-% Creating a precision matrix for f sub m of t that has the dimensions
-% equal to the length of random walk for the intrinsic Gaussian Conditional
-% AutoRegression
-% REMOVE THIS!
-f_sub_m_of_t_prec_mat = igmrfprec([15,15],1);
-
-% Creating a precision matrix for I sub m of t that has the dimensions
-% equal to the length of random walk for the intrinsic Gaussian Conditional
-% AutoRegression (intrinsic Gaussian Markov Random Field), used in
-% Plasma Insulin Kinetics Subsystem
-% REMOVE THIS!
-I_sub_m_of_t_prec_mat = igmrfprec([30,30],1);
-
-
 % Sigma_sub_g, for f sub g of t, the additive time-varying piecewise flux
 % Equivalent to standard deviation (SD) SD = 0.5 [umol/kg/h], used in
 % the Glucose Kinetics Subsystem
@@ -481,7 +461,6 @@ sigma_sub_i_for_f_sub_m_of_t = 100;
 % From: Stochastic Virtual Population of Subjects with Type 1 Diabetes
 % for the Assessment of Closed Loop Glucose Controllers
 sigma_sub_i_for_I_sub_m_of_t = 100;
-
 
 % V, glucose distribution volume
 V = 160; % [mL/kg]
