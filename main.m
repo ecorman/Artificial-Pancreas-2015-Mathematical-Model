@@ -1,5 +1,5 @@
 % This is the main.m file, where the program is executed from
-% Toolboxes required: Statistics Toolbox
+% Toolboxes required: Statistics Toolbox, Optimization Toolbox
 
 % clear, clc, close
 clear, clc, close
@@ -214,6 +214,12 @@ IR_min = 1.4/60;
 % dummy value, for now
 CHO = 120; 
 % [g]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                %
+%   Initializing Gibbs and ODE Parameters plus hyperparameters   %
+%                                                                % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % c_sub_i, [U/min], background insulin appearance 
 % represented as a truncated normal prior distribution for
@@ -483,6 +489,116 @@ V = 160;
 % V_sub_i, insulin distribution volume
 V_sub_i = 190;
 % [mL/kg]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+%  End of Initialization of Gibbs and ODE Parameters and hyperparameters  %
+%                                                                         % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+% Initializing parameter guesses                                          %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Initial guess for c_sub_i, insulin appearance
+c_sub_i_guess = 0.0; % [U/min]
+
+% Initial guess for f_sub_g_of_t, additive time-varying piecewise linear 
+% flux AKA "glucose flux"
+% Consider havin an initial guess for each random walk
+f_sub_g_of_t_guess = 0; % [umol/kg/min]
+
+% Initial guess of dinnertime f_sub_m_of_t, time-varying piecewise linear 
+% function
+% Consider having an initial guess for each random walk
+% Link this with the inital dinnertime meal bolus
+f_sub_m_of_t_dinnertime_guess = 0; % [Unitless]
+
+% Initial guess of breakfast f_sub_m_of_t, time-varying piecewise linear
+% function
+% Consider having an initial guess for each random walk
+% Link this with the initial breakfast meal bolus
+f_sub_m_of_t_breakfast_guess = 0; % [Unitless]
+
+% Initial guess of lunchtime f_sub_m_of_t, time-varying piecewise linear
+% function
+% Consider having an initial guess for each random walk
+% Link this with the initial lunchtime meal bolus
+f_sub_m_of_t_lunchtime_guess = 0; % [Unitless]
+
+% Initial guess for I_sub_m_of_t, multiplicative
+% time-varying piecewise-linear function describing diurnal and other
+% time-varying components of insulin-kinetics
+% Consider having an initial guess for each random walk
+I_sub_m_of_t_guess = 0; % [Unitless]
+
+% Initial guess for log_k_sub_12, 
+log_k_sub_12_guess = -2.8;
+
+% Initial guess for log_k_sub_a1, a fractional deactivation rate
+% constant
+log_k_sub_a1_guess = -5.7; % [1/min]
+
+% Initial guess for log_k_sub_a2, a fractional deactivation rate
+% constant
+log_k_sub_a2_guess = -2.9; % [1/min]
+
+% Initial guess for log_k_sub_a3, a fractional deactivation rate
+% constant
+log_k_sub_a3_guess = -3.7; % [1/min]
+
+% Initial guess for log_S_sub_t, insulin sensitivity of insulin
+% distribution/transport
+log_S_sub_t_guess = 3.7; % [10^-4*/min/mU/L]
+
+% Initial guess for log_S_sub_d, insulin sensitivity of glucose disposal
+log_S_sub_d_guess = 1.6; % [10^-4*/min/mU/L]
+
+% Initial guess for log_S_sub_e, insulin sensitivity of endogenous glucose
+% production
+log_S_sub_e_guess = 6; % [10^-4*/mU/L]
+
+% Initial guess for F_sub_01, the noninsulin dependent glucose utilization
+F_sub_01_guess = 7.3; % % [umol*kg^-1*min^-1]
+
+% Initial guess for EGP_sub_0, endogenous insulin production extrapolated
+% to zero insulin concentration
+EGP_sub_0_guess = 26.3; % [umol*kg^-1*min^-1]
+
+% Initial guess for log_k_sub_e, fractional clearance rate of plasma insulin
+log_k_sub_e_guess = -2.63; % [1/min]
+
+% Initial guess for log_k_sub_is1, fractional transfer rate parameter
+log_k_sub_is1_guess = -3.912; % [1/min]
+
+% Initial guess for log_k_sub_is2, fractional transfer rate parameter
+log_k_sub_is2_guess = -3.912; % [1/min]
+
+% Initial guess for log_k_sub_if, shared fractional transfer rate parameter
+log_k_sub_if_guess = -2.708; % [1/min]
+
+% Initial guess for log_k_sub_m, transfer rate parameter
+log_k_sub_m_guess = -3.9; % [1/min]
+
+% Initial guess for log_of_d, delay associated with the second absorption
+% channel
+log_sub_of_d_guess = 2.3; % [min]
+
+% Initial guess for log_Q_sub_b, insulin on board due to a preceding
+% insulin delivery
+log_Q_sub_b_guess = -0.7; % [U]
+
+% Initial guess for log_p_sub_i, 
+log_p_sub_i = 0; 
+
+% Initial guess for log_p_sub_m, portion of meal carbohydrates absorbed in
+% the first chanel
+ log_p_sub_m = 0; % [unitless]
+ 
+  
+
 
 
 
