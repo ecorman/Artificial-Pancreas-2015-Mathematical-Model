@@ -157,7 +157,7 @@ u_sub_i_of_t, G_of_t,V_sub_i,w,V)
  
  
  
-function [dydt] = equations(~,y)
+function [dydt] = equations(~,y,u_sub_i_of_t)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Subcutaneous Insulin Absorption Subsystem
@@ -241,6 +241,16 @@ function [dydt] = equations(~,y)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 dydt = y;
+
+dydt(1) = ((u_sub_i_of_t)*(y(11)))-((y(1))*(y(12)));
+
+dydt(2) = ((y(1))*(y(12)))-((y(2))*(y(13)));
+
+dydt(3) = ((u_sub_i_of_t)*(1-(y(11))))-((y(3))*(y(15)));
+
+dydt(4) = ((y(3))*(y(15)))-((y(4))*(y(15)));
+
+dydt(5) = ((((y(2))*(y(13)))+((y(3))*(y(15))))*(y(18)))-((y(5))*(y(16)))+(y(17));
 
 
  
