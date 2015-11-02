@@ -3,7 +3,7 @@ f_sub_m_of_t, I_sub_m_of_t, log_k_sub_12, log_k_sub_a1, log_k_sub_a2, ...
 log_k_sub_a3, log_S_sub_t, log_S_sub_d, log_S_sub_e, F_01, ...
 EGP_0_minus_F_01, log_k_sub_e, log_k_sub_is1, log_k_sub_is2, ...
 log_k_sub_if, log_k_sub_m, log_d, log_Q_sub_b, p_sub_i, p_sub_m, ...
-u_sub_i_of_t, G_of_t,V_sub_i,w,V)
+u_sub_i_of_t, G_of_t,V_sub_i,w,V,CHO,t)
 
 % ODESystemSolve is where the system of differential equations is solved 
 % for as a system, for now, using ode45 solver
@@ -71,19 +71,19 @@ u_sub_i_of_t, G_of_t,V_sub_i,w,V)
  y(5) = (((((y(2))*(exp(log_k_sub_is2)))+((y(4))*(exp(log_k_sub_if))))*(I_sub_m_of_t))+c_sub_i)/(exp(log_k_sub_e));
  
  % I_sub_p_of_0, [mU/L], plasma insulin concentration
- I_sub_p = ((y(5))/((V_sub_i)*w))*(E+06);
+ I_sub_p_of_0 = ((y(5))/((V_sub_i)*w))*(E+06);
  
  % y(6) = x_sub_1_of_0, [1/min], (remote) effect of insulin on glucose
  % distribution/transport
- y(6)= (exp(log_S_sub_t))*I_sub_p;
+ y(6)= (exp(log_S_sub_t))*I_sub_p_of_0;
  
  % y(7) = x_sub_2_of_0, [1/min], (remote) effect of insulin on glucose
  % disposal
- y(7) = (exp(log_S_sub_d))*I_sub_p;
+ y(7) = (exp(log_S_sub_d))*I_sub_p_of_0;
  
  % y(8) = x_sub_3_of_0, [1/min], (remote) effect of insulin on 
  % endogenous glucose production
- y(8) = (exp(log_S_sub_e))*I_sub_p;
+ y(8) = (exp(log_S_sub_e))*I_sub_p_of_0;
  
  % y(9) = Q_sub_1_of_0, [umol/kg], glucose mass in the accessible
  % (where measurements are made) compartment
@@ -155,9 +155,39 @@ u_sub_i_of_t, G_of_t,V_sub_i,w,V)
  % linear flux
  y(27) = f_sub_g_of_t;
  
+ % y(28) = k_sub_12, [1/min], transfer rate constant from non-accessible
+ % to accessible compartment
+ y(28) = exp(log_k_sub_12);
+ 
+ % U_sub_m1_of_t, [umol/kg/min], appearance of the first absorption channel
+ % for Gut Glucose Absorption Subsystem
+ U_sub_m1_of_t = ((CHO*5551)/w)*(p_sub_m)*((exp(log_k_sub_m)).^2)*t*(exp(-exp(log_k_sub_m)*t));
  
  
-function [dydt] = equations(~,y,u_sub_i_of_t)
+ % U_sub_m2_of_r, [umol/kg/min], appearance of the second absorption 
+ % channel for Gut Glucose Absorption Subsystem
+ 
+ if t>(exp(log_d))
+     U_sub_m2_of_t = ((exp(log_k_sub_m)).^2)*(t-d)*((CHO*5551)/w)*(1-p_sub_m)*(exp((-exp(log_k_sub_m))*(t-d)));
+     
+ else
+     U_sub_m2_of_t = 0;
+     
+ end
+ 
+ % U_sub_m_of_t, [umol/kg/min], appearance of absorption for Gut Glucose 
+ % Absorption Subsystem
+U_sub_m_of_t = (U_sub_m1_of_t + U_sub_m2_of_t)*(f_sub_m_of_t); 
+
+% Options for solving system of nonlinear differential equations
+options = odeset('RelTol', .00001, ...
+                 'NonNegative', [1 2 3 4 5 6 7 8 9 10]);
+             
+% Solution to system of nonlinear differential equations
+
+[T1, Z1] = ode15(@equations, y, u_sub_i_of_t, V_sub_i, w, U_sub_m_of_t, V, options);
+
+function [dydt] = equations(~, y, u_sub_i_of_t, V_sub_i, w, U_sub_m_of_t, V)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Subcutaneous Insulin Absorption Subsystem
@@ -252,6 +282,42 @@ dydt(4) = ((y(3))*(y(15)))-((y(4))*(y(15)));
 
 dydt(5) = ((((y(2))*(y(13)))+((y(3))*(y(15))))*(y(18)))-((y(5))*(y(16)))+(y(17));
 
+dydt(6) = -((y(19))*(y(6)))+((y(19))*(y(22))*((y(5))/(V_sub_i)*(w)));
+
+dydt(7) = -((y(20))*(y(7)))+((y(20))*(y(23))*((y(5))/(V_sub_i)*(w)));
+
+dydt(8) = -((y(21))*(y(8)))+((y(21))*(y(24))*((y(5))/(V_sub_i)*(w)));
+
+if ((y(8))<1)
+dydt(9) = -(y(25))*(((y(9))/V)/(1+((y(9))/V)))-((y(6))*(y(9)))+((y(28))*(y(10)))+((y(26))*(1-(y(8))))+(y(27))+U_sub_m_of_t;
+
+else
+
+    dydt(9) = -(y(25))*(((y(9))/V)/(1+((y(9))/V)))-((y(6))*(y(9)))+((y(28))*(y(10)))+(y(27))+U_sub_m_of_t;
+    
+end
+
+dydt(10) = ((y(6))*(y(9)))-(((y(28))+(y(7)))*(y(10)));
+
+% Parameters are time invariant
+dydt(11) = 0;
+dydt(12) = 0;
+dydt(13) = 0;
+dydt(14) = 0;
+dydt(15) = 0;
+dydt(16) = 0;
+dydt(17) = 0;
+dydt(18) = 0;
+dydt(19) = 0;
+dydt(20) = 0;
+dydt(21) = 0;
+dydt(22) = 0;
+dydt(23) = 0;
+dydt(24) = 0;
+dydt(25) = 0;
+dydt(26) = 0;
+dydt(27) = 0;
+dydt(28) = 0;
 
  
 
