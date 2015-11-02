@@ -1,12 +1,13 @@
-function [ solution ] = ODESystemSolve( c_sub_i, f_sub_g_of_t, ...
+function [ T1, Z1 ] = ODESystemSolve( c_sub_i, f_sub_g_of_t, ...
 f_sub_m_of_t, I_sub_m_of_t, log_k_sub_12, log_k_sub_a1, log_k_sub_a2, ...
 log_k_sub_a3, log_S_sub_t, log_S_sub_d, log_S_sub_e, F_01, ...
 EGP_0_minus_F_01, log_k_sub_e, log_k_sub_is1, log_k_sub_is2, ...
 log_k_sub_if, log_k_sub_m, log_d, log_Q_sub_b, p_sub_i, p_sub_m, ...
-u_sub_i_of_t, G_of_t,V_sub_i,w,V,CHO,t)
+u_sub_i_of_t, G_of_t, V_sub_i, w, V, CHO, t)
 
 % ODESystemSolve is where the system of differential equations is solved 
-% for as a system, for now, using ode45 solver
+% for as a system, for now, using ode15s solver, as this set of
+% differential equations is expected to require a "stiff" solver
 
  % c_sub_i, [U/min] background insulin appearance
  % f_sub_g_of_t, [umol/kg/min] additive time-varying piecewise linear flux
@@ -185,7 +186,7 @@ options = odeset('RelTol', .00001, ...
              
 % Solution to system of nonlinear differential equations
 
-[T1, Z1] = ode15(@equations, y, u_sub_i_of_t, V_sub_i, w, U_sub_m_of_t, V, options);
+[T1, Z1] = ode15s(@equations, y, u_sub_i_of_t, V_sub_i, w, U_sub_m_of_t, V, options);
 
 function [dydt] = equations(~, y, u_sub_i_of_t, V_sub_i, w, U_sub_m_of_t, V)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -270,53 +271,117 @@ function [dydt] = equations(~, y, u_sub_i_of_t, V_sub_i, w, U_sub_m_of_t, V)
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Equations for differential equation solver
 dydt = y;
 
+% Q_dot_sub_is1_of_t =
+% ((u_sub_i_of_t)*(p_sub_i))-((Q_sub_is1_of_t)*(k_sub_is1))
 dydt(1) = ((u_sub_i_of_t)*(y(11)))-((y(1))*(y(12)));
 
+% Q_dot_sub_is2_of_t =
+% ((Q_sub_is1_of_t)*(k_sub_is1))-((Q_sub_is2_of_t)*k_sub_is2))
 dydt(2) = ((y(1))*(y(12)))-((y(2))*(y(13)));
 
+% Q_dot_sub_if1_of_t =
+% ((u_sub_i_of_t)*(1-p_sub_i))-((Q_sub_if1_of_t)*(k_sub_if))
 dydt(3) = ((u_sub_i_of_t)*(1-(y(11))))-((y(3))*(y(15)));
 
+% Q_dot_sub_if2_of_t = 
+% ((Q_if1_of_t)*(k_sub_if))-((Q_sub_if2_of_t)*(k_sub_if))
 dydt(4) = ((y(3))*(y(15)))-((y(4))*(y(15)));
 
+% Q_dot_sub_i_of_t =
+% ((((Q_sub_is2_of_t)*(k_sub_is2))+((Q_dot_if2_of_t)*(k_sub_if)))*I_sub_m_of_t)
+% - ((Q_sub_i_of_t)*(k_sub_e))+(c_sub_i)
 dydt(5) = ((((y(2))*(y(13)))+((y(3))*(y(15))))*(y(18)))-((y(5))*(y(16)))+(y(17));
 
+% x_dot_sub_1_of_t =
+% -((k_sub_a1)*(x_sub_1_of_t))+((k_sub_a1)*(S_sub_t)*(I_sub_p_of_t))
 dydt(6) = -((y(19))*(y(6)))+((y(19))*(y(22))*((y(5))/(V_sub_i)*(w)));
 
+% x_dot_sub_2_of_t =
+% -((k_sub_a2)*(x_sub_2_of_t))+((k_sub_a2)*(S_sub_d)*(I_sub_p_of_t))
 dydt(7) = -((y(20))*(y(7)))+((y(20))*(y(23))*((y(5))/(V_sub_i)*(w)));
 
+% x_dot_sub_3_of_t =
+% -((k_sub_a3)*(x_sub_3_of_t))+((k_sub_a3)*(S_sub_e)*(I_sub_p_of_t))
 dydt(8) = -((y(21))*(y(8)))+((y(21))*(y(24))*((y(5))/(V_sub_i)*(w)));
 
 if ((y(8))<1)
+
+% Q_dot_sub_1_of_t =
+% -(F_01)*(((Q_sub_1_of_t)/V)/(1+((Q_sub_1_of_t)/V)))-
+% ((x_sub_1_of_t)*(Q_sub_1_of_t))+((k_sub_12)*(Q_sub_2_of_t))
+% + ((EGP_0)*(1-x_sub_3_of_t))+f_sub_g_of_t+U_sub_m_of_t
 dydt(9) = -(y(25))*(((y(9))/V)/(1+((y(9))/V)))-((y(6))*(y(9)))+((y(28))*(y(10)))+((y(26))*(1-(y(8))))+(y(27))+U_sub_m_of_t;
 
 else
-
+    % Q_dot_sub_1_of_t =
+    % -(F_01)*(((Q_sub_1_of_t)/V)/(1+((Q_sub_1_of_t)/V)))-
+    % ((x_sub_1_of_t)*(Q_sub_1_of_t))+((k_sub_12)*(Q_sub_2_of_t))
+    % +f_sub_g_of_t+U_sub_m_of_t
     dydt(9) = -(y(25))*(((y(9))/V)/(1+((y(9))/V)))-((y(6))*(y(9)))+((y(28))*(y(10)))+(y(27))+U_sub_m_of_t;
     
 end
 
+% Q_dot_sub_2_of_t =
+% ((x_sub_1_of_t)*(Q_sub_1_of_t))-(((k_sub_12)*(x_sub_2_of_t))*Q_sub_2_of_t)
 dydt(10) = ((y(6))*(y(9)))-(((y(28))+(y(7)))*(y(10)));
 
 % Parameters are time invariant
+
+% dydt(11) = p_sub_i
 dydt(11) = 0;
+
+% dydt(12) = k_sub_is1
 dydt(12) = 0;
+
+% dydt(13) = k_sub_is2
 dydt(13) = 0;
+
+% dydt(14) = Q_sub_b
 dydt(14) = 0;
+
+% dydt(15) = k_sub_if
 dydt(15) = 0;
+
+% dydt(16) = k_sub_e
 dydt(16) = 0;
+
+% dydt(17) = c_sub_i
 dydt(17) = 0;
+
+% dydt(18) = I_sub_m_of_t
 dydt(18) = 0;
+
+% dydt(19) = k_sub_a1
 dydt(19) = 0;
+
+% dydt(20) = k_sub_a2
 dydt(20) = 0;
+
+% dydt(21) = k_sub_a3
 dydt(21) = 0;
+
+% dydt(22) = S_sub_t
 dydt(22) = 0;
+
+% dydt(23) = S_sub_d
 dydt(23) = 0;
+
+% dydt(24) = S_sub_e
 dydt(24) = 0;
+
+% dydt(25) = F_01
 dydt(25) = 0;
+
+% dydt(26) = EGP_0
 dydt(26) = 0;
+
+% dydt(27) = f_sub_g_of_t
 dydt(27) = 0;
+
+% dydt(28) = k_sub_12
 dydt(28) = 0;
 
  
