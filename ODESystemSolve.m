@@ -72,7 +72,7 @@ u_sub_i_of_t, G_of_t, V_sub_i, w, V, CHO, t)
  y(5) = (((((y(2))*(exp(log_k_sub_is2)))+((y(4))*(exp(log_k_sub_if))))*(I_sub_m_of_t))+c_sub_i)/(exp(log_k_sub_e));
  
  % I_sub_p_of_0, [mU/L], plasma insulin concentration
- I_sub_p_of_0 = ((y(5))/((V_sub_i)*w))*(E+06);
+ I_sub_p_of_0 = ((y(5))/((V_sub_i)*w))*(10^6);
  
  % y(6) = x_sub_1_of_0, [1/min], (remote) effect of insulin on glucose
  % distribution/transport
@@ -169,7 +169,7 @@ u_sub_i_of_t, G_of_t, V_sub_i, w, V, CHO, t)
  % channel for Gut Glucose Absorption Subsystem
  
  if t>(exp(log_d))
-     U_sub_m2_of_t = ((exp(log_k_sub_m)).^2)*(t-d)*((CHO*5551)/w)*(1-p_sub_m)*(exp((-exp(log_k_sub_m))*(t-d)));
+     U_sub_m2_of_t = ((exp(log_k_sub_m)).^2)*(t-(exp(log_d)))*((CHO*5551)/w)*(1-p_sub_m)*(exp((-exp(log_k_sub_m))*(t-(exp(log_d)))));
      
  else
      U_sub_m2_of_t = 0;
@@ -186,7 +186,8 @@ options = odeset('RelTol', .00001, ...
              
 % Solution to system of nonlinear differential equations
 
-[T1, Z1] = ode15s(@equations, y, u_sub_i_of_t, V_sub_i, w, U_sub_m_of_t, V, options);
+
+[T1, Z1] = ode15s(@(t,y) equations(t, y, u_sub_i_of_t, V_sub_i, w, U_sub_m_of_t, V),[0,15], y, options);
 
 function [dydt] = equations(~, y, u_sub_i_of_t, V_sub_i, w, U_sub_m_of_t, V)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -307,20 +308,20 @@ dydt(7) = -((y(20))*(y(7)))+((y(20))*(y(23))*((y(5))/(V_sub_i)*(w)));
 % -((k_sub_a3)*(x_sub_3_of_t))+((k_sub_a3)*(S_sub_e)*(I_sub_p_of_t))
 dydt(8) = -((y(21))*(y(8)))+((y(21))*(y(24))*((y(5))/(V_sub_i)*(w)));
 
-if ((y(8))<1)
+if (y(8))<1
 
 % Q_dot_sub_1_of_t =
 % -(F_01)*(((Q_sub_1_of_t)/V)/(1+((Q_sub_1_of_t)/V)))-
 % ((x_sub_1_of_t)*(Q_sub_1_of_t))+((k_sub_12)*(Q_sub_2_of_t))
 % + ((EGP_0)*(1-x_sub_3_of_t))+f_sub_g_of_t+U_sub_m_of_t
-dydt(9) = -(y(25))*(((y(9))/V)/(1+((y(9))/V)))-((y(6))*(y(9)))+((y(28))*(y(10)))+((y(26))*(1-(y(8))))+(y(27))+U_sub_m_of_t;
+dydt(9) = -((y(25))*(((y(9))/V)/(1+((y(9))/V))))-((y(6))*(y(9)))+((y(28))*(y(10)))+((y(26))*(1-(y(8))))+(y(27))+U_sub_m_of_t;
 
 else
     % Q_dot_sub_1_of_t =
     % -(F_01)*(((Q_sub_1_of_t)/V)/(1+((Q_sub_1_of_t)/V)))-
     % ((x_sub_1_of_t)*(Q_sub_1_of_t))+((k_sub_12)*(Q_sub_2_of_t))
     % +f_sub_g_of_t+U_sub_m_of_t
-    dydt(9) = -(y(25))*(((y(9))/V)/(1+((y(9))/V)))-((y(6))*(y(9)))+((y(28))*(y(10)))+(y(27))+U_sub_m_of_t;
+    dydt(9) = -((y(25))*(((y(9))/V)/(1+((y(9))/V))))-((y(6))*(y(9)))+((y(28))*(y(10)))+(y(27))+U_sub_m_of_t;
     
 end
 
