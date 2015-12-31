@@ -2,7 +2,6 @@
 import pymc3 as pymc
 import numpy
 import scipy
-from scipy.stats import truncnorm 
 
 # c_sub_i, [U/min], background insulin appearance
 # Metropolis-Hastings sampling as a Markov chain Monte Carlo
@@ -215,44 +214,40 @@ adj = numpy.array([[2,4,5],
 	[9,8,11,14,15],
 	[10,11,14],
 	[13,10,11,12,15],
-	[12,11,14])
+	[12,11,14]])
 
+
+# y0 
+
+Q_sub_is1_0 = (u_sub_i*p_sub_i.item())/(k_sub_is1.item())
+
+Q_sub_is2_0 = (Q_sub_is1_0*k_sub_is1.item())/(k_sub_is2.item())
+
+Q_sub_if1_0 = 
 
 # Gut Glucose Absorption Subsystem
 
 
 # deterministic compartmental model
-@pymc.deterministic
-def Sto(c_sub_i_final = c_sub_i, k_sub_e_final = k_sub_e, Q_sub_b_final = Q_sub_b, p_sub_i_final = p_sub_i, p_sub_m_final = p_sub_m, k_sub_is1_final = k_sub_is1, k_sub_is2_final = k_sub_is2, k_sub_if_final = k_sub_if, k_sub_m_dinner_final = k_sub_m_dinner, d_dinner_final = d_dinner, k_sub_m_breakfast_final = k_sub_m_breakfast, d_breakfast_final = d_breakfast, k_sub_12_final = k_sub_12, k_sub_a1_final = k_sub_a1, k_sub_a2_final = k_sub_a2, k_sub_a3_final = k_sub_a3, S_sub_t_final = S_sub_t, S_sub_d_final = S_sub_d, S_sub_e_final = S_sub_e, EGP_0_final = EGP_0, F_01_final = F_01, u_sub_i_final = u_sub_i, I_sub_m_final = I_sub_m, I_sub_p_final = I_sub_p, f_sub_g_final = f_sub_g):
-    def glu_model(t):
-        dQ_sub_is1 = ((u_sub_i_final.item())*p_sub_i_final.item()) - ((Q_sub_i)*k_sub_is1_final.item())
-        dQ_sub_is2 = ((Q_sub_is1)*(k_sub_is1_final.item()))-((Q_sub_is2)*k_sub_is2_final.item())
-        dQ_sub_if1 = ((u_sub_i_final.item())*(1-p_sub_i_final.item())) - ((Q_sub_if1)*k_sub_if_final.item())
-        dQ_sub_if2 = ((Q_sub_if1)*(k_sub_if_final.item())) - ((Q_sub_if2)*(k_sub_if_final.item()))
-        dQ_sub_i = (((Q_sub_is2)*(k_sub_is2_final.item()) + ((Q_sub_if2)*(k_sub_if_final.item())))*I_sub_m_final.item()) - ((Q_sub_i)*(k_sub_e_final.item())) + c_sub_i_final.item()
-        dx_sub_1 = ((-k_sub_a1_final.item())*x_sub_1) + ((k_sub_a1_final.item())*(S_sub_t_final.item())*(I_sub_p_final.item()))
-        dx_sub_2 = ((-k_sub_a2_final.item())*x_sub_2) + ((k_sub_a2_final.item())*(S_sub_d_final.item())*(I_sub_p_final.item()))
-        dx_sub_3 = ((-k_sub_a3_final.item())*x_sub_3) + ((k_sub_a3_final.item())*(S_sub_e_final.item())*(I_sub_p_final.item()))
-        dQ_sub_1 = (-F_01)*((Q_sub_1/V)/(1+(Q_sub_1/V))) - (x_sub_1*Q_sub_1) + ((k_sub_12_final.item())*Q_sub_2) + ((EGP_0_final.item())*(1-x_sub_3)) + f_sub_g_final.item()
-        dydt = [dcc_dt, dcp_dt]
-        return dydt
-    soln = odeint(pk_model, y0, tspan)
-    cc, cp = soln[:,0], soln[:,1]
-    return [cc, cp]
-cc = pc.Lambda('cc', lambda PK=PK: PK[0])
-cp = pc.Lambda('cp', lambda PK=PK: PK[1])
+# @pymc.deterministic
+# def Sto(c_sub_i_final = c_sub_i, k_sub_e_final = k_sub_e, Q_sub_b_final = Q_sub_b, p_sub_i_final = p_sub_i, p_sub_m_final = p_sub_m, k_sub_is1_final = k_sub_is1, k_sub_is2_final = k_sub_is2, k_sub_if_final = k_sub_if, k_sub_m_dinner_final = k_sub_m_dinner, d_dinner_final = d_dinner, k_sub_m_breakfast_final = k_sub_m_breakfast, d_breakfast_final = d_breakfast, k_sub_12_final = k_sub_12, k_sub_a1_final = k_sub_a1, k_sub_a2_final = k_sub_a2, k_sub_a3_final = k_sub_a3, S_sub_t_final = S_sub_t, S_sub_d_final = S_sub_d, S_sub_e_final = S_sub_e, EGP_0_final = EGP_0, F_01_final = F_01, u_sub_i_final = u_sub_i, I_sub_m_final = I_sub_m, I_sub_p_final = I_sub_p, f_sub_g_final = f_sub_g):
+#    def glu_model(t):
+#        dQ_sub_is1 = ((u_sub_i_final.item())*p_sub_i_final.item()) - ((Q_sub_i)*k_sub_is1_final.item())
+#        dQ_sub_is2 = ((Q_sub_is1)*(k_sub_is1_final.item()))-((Q_sub_is2)*k_sub_is2_final.item())
+#        dQ_sub_if1 = ((u_sub_i_final.item())*(1-p_sub_i_final.item())) - ((Q_sub_if1)*k_sub_if_final.item())
+#        dQ_sub_if2 = ((Q_sub_if1)*(k_sub_if_final.item())) - ((Q_sub_if2)*(k_sub_if_final.item()))
+#        dQ_sub_i = (((Q_sub_is2)*(k_sub_is2_final.item()) + ((Q_sub_if2)*(k_sub_if_final.item())))*I_sub_m_final.item()) - ((Q_sub_i)*(k_sub_e_final.item())) + c_sub_i_final.item()
+#        dx_sub_1 = ((-k_sub_a1_final.item())*x_sub_1) + ((k_sub_a1_final.item())*(S_sub_t_final.item())*(I_sub_p_final.item()))
+#        dx_sub_2 = ((-k_sub_a2_final.item())*x_sub_2) + ((k_sub_a2_final.item())*(S_sub_d_final.item())*(I_sub_p_final.item()))
+#        dx_sub_3 = ((-k_sub_a3_final.item())*x_sub_3) + ((k_sub_a3_final.item())*(S_sub_e_final.item())*(I_sub_p_final.item()))
+#        dQ_sub_1 = (-F_01)*((Q_sub_1/V)/(1+(Q_sub_1/V))) - (x_sub_1*Q_sub_1) + ((k_sub_12_final.item())*Q_sub_2) + ((EGP_0_final.item())*(1-x_sub_3)) + f_sub_g_final.item()
+#        dydt = [dQ_sub_is1, dQ_sub_is2, dQ_sub_if1, dQ_sub_if2, dQ_sub_i, dx_sub_1, dx_sub_2, dx_sub_3, d_Q_sub_1, ]
+#        return dydt
+#    soln = odeint(glu_model, y0, tspan)
+#    cc, cp = soln[:,0], soln[:,1]
+#    return [cc, cp]
+# cc = pc.Lambda('cc', lambda PK=PK: PK[0])
+# cp = pc.Lambda('cp', lambda PK=PK: PK[1])
 
-@pymc.deterministic
-def StoModel(k1=kcp, k2=kpc, k3=ke):
-    def pk_model(y, t):
-        y_cc, y_cp = y[0], y[1]
-        dcc_dt = k1 * y_cp - (k2 + k3) * y_cc
-        dcp_dt = k2 * y_cc - k1 * y_cp
-        dydt = [dcc_dt, dcp_dt]
-        return dydt
-    soln = odeint(pk_model, y0, tspan)
-    cc, cp = soln[:,0], soln[:,1]
-    return [cc, cp]
-cc = pc.Lambda('cc', lambda PK=PK: PK[0])
-cp = pc.Lambda('cp', lambda PK=PK: PK[1])
+
 
