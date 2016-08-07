@@ -1,0 +1,316 @@
+model {
+
+# c_sub_i, [U/min], background insulin appearance
+# Metropolis-Hastings sampling as a Markov chain Monte Carlo
+# From: Stochastic Virtual Population of Subjects with Type 
+# 1 Diabetes for the Assessment of Closed-Loop Glucose Controllers
+
+c_sub_i ~ dnorm(0,0.04)T(0,1.0E21)
+
+# log_k_sub_e, [1/min], fractional clearance rate 
+# represented as a normal distribution for Metropolis-Hastings
+# sampling as a Markov chain Monte Carlo method
+# From: Stochastic Virtual Population of Subjects with Type
+# 1 Diabetes for the Assessment of Closed-Loop Glucose Controllers
+
+log_k_sub_e ~ dnorm(-2.63,4.49)
+
+k_sub_e <- exp(log_k_sub_e)
+
+# log_Q_sub_b, [U], insulin-on-board due to a preceding insulin 
+# delivery represented as a normal distribution for 
+# Metropolis-Hastings sampling as a Markov chain Monte Carlo   
+# method 
+# From: Stochastic Virtual Population of Subjects with Type 
+# 1 Diabetes for the Assessment of Closed-Loop Glucose Controllers
+
+log_Q_sub_b ~ dnorm(-0.7,1.5)
+
+Q_sub_b <- exp(log_Q_sub_b)
+
+# p_sub_i, [unitless], portion of insulin absorbed in the slow
+# channel, in the subcutaneous insulin absorption subchannel,
+# represented as a uniform prior distribution for 
+# Metropolis-Hastings sampling as a Markov chain Monte Carlo 
+# method
+# From: Stochastic Virtual Population of Subjects with Type
+# 1 Diabetes for the Assessment of Closed-Loop Glucose Controllers
+
+p_sub_i ~ dunif(0,1)
+
+# p_sub_m, [unitless], uniform prior distribution
+
+p_sub_m ~ dunif(0,1)
+
+# log_k_sub_i_mean, [log(1/min)] [log(1/min)] [log(1/min)],      
+# contains the population mean values for log_k_sub_is1 
+# (fractional transfer rate), log_k_sub_is2 (fractional 
+# transfer rate), and log_k_sub_if 
+# (shared fractional transfer rate)
+
+log_k_sub_is1_mean <- -3.912
+log_k_sub_is2_mean <- -3.912
+log_k_sub_if_mean <- -2.708
+
+log_k_sub_i_mean[1,1] <- log_k_sub_is1_mean
+log_k_sub_i_mean[1,2] <- log_k_sub_is2_mean
+log_k_sub_i_mean[1,3] <- log_k_sub_if_mean
+
+log_k_sub_is1_prec <- 6.25
+log_k_sub_is2_prec <- 6.25
+log_k_sub_if_prec <- 6.24
+
+# log_omega_sub_i_matrix, is the precision matrix (inverse
+# of the covariance matrix) for log_k_sub_is1, log_k_sub_is2,
+# and log_k_sub_if
+
+log_omega_sub_i_matrix[1,1] <- log_k_sub_is1_prec
+log_omega_sub_i_matrix[1,2] <- 0
+log_omega_sub_i_matrix[1,3] <- 0
+log_omega_sub_i_matrix[2,1] <- 0
+log_omega_sub_i_matrix[2,2] <- log_k_sub_is2_prec
+log_omega_sub_i_matrix[2,3] <- 0
+log_omega_sub_i_matrix[3,1] <- 0
+log_omega_sub_i_matrix[3,2] <- 0
+log_omega_sub_i_matrix[3,3] <- log_k_sub_if_prec
+
+covariance_sub_i_matrix[1:3,1:3] <- inverse(log_omega_sub_i_matrix[,])
+
+ for (i in 1 : 3) {
+log.k_sub_i[i, 1 : 3] ~ dmnorm(log_k_sub_i_mean[,],covariance_sub_i_matrix[,])
+}
+
+for (i in 1:3) {
+for (j in 1:3)
+{
+k_sub_i[i,j] <- exp(log.k_sub_i[i,j])
+}
+}
+
+k_sub_is1 <- k_sub_i[1,1]
+k_sub_is2 <- k_sub_i[2,2]
+k_sub_if <- k_sub_i[3,3]
+
+# log_M_mean, population mean values for log_k_sub_m and log_d
+
+log_M_mean_dinner[1,1] <- -3.9
+log_M_mean_dinner[1,2] <- 2.3
+
+# log_omega_sub_m_matrix, precision matrix for log_k_sub_m and
+# log_d
+
+log_omega_sub_m_matrix_dinner[1,1] <- 12.84
+log_omega_sub_m_matrix_dinner[1,2] <- 0
+log_omega_sub_m_matrix_dinner[2,1] <- 0
+log_omega_sub_m_matrix_dinner[2,2] <- pow((100/CHO_dinner),2)
+
+covariance_sub_m_matrix_dinner[1:2,1:2] <- inverse(log_omega_sub_m_matrix_dinner[,])
+
+ for (i in 1 : 2) {
+log_M_matrix_dinner[i, 1 : 2] ~ dmnorm(log_M_mean_dinner[,],covariance_sub_m_matrix_dinner[,])
+}
+
+for (i in 1:2) {
+for (j in 1:2) {
+M_matrix_dinner[i,j] <- exp(log_M_matrix_dinner[i,j])
+}
+}
+
+k_sub_m_dinner <- M_matrix_dinner[1,1]
+d_dinner <- M_matrix_dinner[2,2]
+
+# log_M_mean, population mean values for log_k_sub_m and log_d
+
+log_M_mean_breakfast[1,1] <- -3.9
+log_M_mean_breakfast[1,2] <- 2.3
+
+log_omega_sub_m_matrix_breakfast[1,1] <- 12.84
+log_omega_sub_m_matrix_breakfast[1,2] <- 0
+log_omega_sub_m_matrix_breakfast[2,1] <- 0
+log_omega_sub_m_matrix_breakfast[2,2] <- pow((100/CHO_breakfast),2)
+
+covariance_sub_m_matrix_breakfast[1:2,1:2] <- inverse(log_omega_sub_m_matrix_breakfast[,])
+
+for (i in 1 : 2) {
+log_M_matrix_breakfast[i, 1 : 2] ~ dmnorm(log_M_mean_breakfast[,],covariance_sub_m_matrix_breakfast[,])
+}
+
+for (i in 1:2) {
+for (j in 1:2) {
+M_matrix_breakfast[i,j] <- exp(log_M_matrix_breakfast[i,j])
+}
+}
+
+k_sub_m_breakfast <- M_matrix_breakfast[1,1]
+d_breakfast <- M_matrix_breakfast[2,2]
+
+P_mean[1,1] <- -2.8
+P_mean[1,2] <- -5.7
+P_mean[1,3] <- -2.9
+P_mean[1,4] <- -3.7
+P_mean[1,5] <- 3.7
+P_mean[1,6] <- 1.6
+P_mean[1,7] <- 6
+P_mean[1,8] <- 9.7
+P_mean[1,9] <- 16.1
+
+covariance_matrix_P[1,1] <- 1.564600225344889
+covariance_matrix_P[1,2] <- 0.217516115240053
+covariance_matrix_P[1,3] <- -0.386594456493482
+covariance_matrix_P[1,4] <- -0.205862596034903
+covariance_matrix_P[1,5] <- 1.388554609839240
+covariance_matrix_P[1,6] <- 2.065576970532219
+covariance_matrix_P[1,7] <- 0.319022768395462
+covariance_matrix_P[1,8] <- 0.118578560941949
+covariance_matrix_P[1,9] <- 0.441111767140451
+covariance_matrix_P[2,1] <- 0.217516115240053
+covariance_matrix_P[2,2] <- 1.564082426075518
+covariance_matrix_P[2,3] <- -0.128475298755544
+covariance_matrix_P[2,4] <- -0.129278574722403
+covariance_matrix_P[2,5] <- -0.558980220741498
+covariance_matrix_P[2,6] <- -1.139275485235670
+covariance_matrix_P[2,7] <- -0.951387821300577
+covariance_matrix_P[2,8] <- -0.389754387311363
+covariance_matrix_P[2,9] <- -0.382153470058930
+covariance_matrix_P[3,1] <- -0.386594456493482
+covariance_matrix_P[3,2] <- -0.128475298755544
+covariance_matrix_P[3,3] <- 1.564733448492373
+covariance_matrix_P[3,4] <- 0.176310131377199
+covariance_matrix_P[3,5] <- -2.312624845970110
+covariance_matrix_P[3,6] <- -1.610422592746239
+covariance_matrix_P[3,7] <- -0.856014003244388
+covariance_matrix_P[3,8] <- 0.468649726108543
+covariance_matrix_P[3,9] <- -0.524957955119159
+covariance_matrix_P[4,1] <- -0.205862596034903
+covariance_matrix_P[4,2] <- -0.129278574722403
+covariance_matrix_P[4,3] <- 0.176310131377199
+covariance_matrix_P[4,4] <- 1.564082370774399
+covariance_matrix_P[4,5] <- -1.006663260240340
+covariance_matrix_P[4,6] <- -0.836708723492326
+covariance_matrix_P[4,7] <- -1.848448097465850
+covariance_matrix_P[4,8] <- 0.076837358606321
+covariance_matrix_P[4,9] <- -1.264696172295281
+covariance_matrix_P[5,1] <- 1.388554609839240
+covariance_matrix_P[5,2] <- -0.558980220741498
+covariance_matrix_P[5,3] <- -2.312624845970110
+covariance_matrix_P[5,4] <- -1.006663260240340
+covariance_matrix_P[5,5] <- 58.238249021516120
+covariance_matrix_P[5,6] <- 17.401002142432850
+covariance_matrix_P[5,7] <- 8.638174050067068
+covariance_matrix_P[5,8] <- -1.636501724344732
+covariance_matrix_P[5,9] <- 2.739637669682805
+covariance_matrix_P[6,1] <- 2.065576970532219
+covariance_matrix_P[6,2] <- -1.139275485235670
+covariance_matrix_P[6,3] <- -1.610422592746239
+covariance_matrix_P[6,4] <- -0.836708723492326
+covariance_matrix_P[6,5] <- 17.401002142432855
+covariance_matrix_P[6,6] <- 62.391934897146620
+covariance_matrix_P[6,7] <- 7.645588013318854										
+covariance_matrix_P[6,8] <- 1.825355309701060
+covariance_matrix_P[6,9] <- 3.253475585497199
+covariance_matrix_P[7,1] <- 0.319022768395462
+covariance_matrix_P[7,2] <- -0.951387821300577
+covariance_matrix_P[7,3] <- -0.856014003244388
+covariance_matrix_P[7,4] <- -1.848448097465850
+covariance_matrix_P[7,5] <- 8.638174050067068
+covariance_matrix_P[7,6] <- 7.645588013318855
+covariance_matrix_P[7,7] <- 30.166534590087520
+covariance_matrix_P[7,8] <- -0.162898037855255
+covariance_matrix_P[7,9] <- 6.027755666617771
+covariance_matrix_P[8,1] <- 0.118578560941949
+covariance_matrix_P[8,2] <- -0.389754387311363
+covariance_matrix_P[8,3] <- 0.468649726108543
+covariance_matrix_P[8,4] <- 0.076837358606321
+covariance_matrix_P[8,5] <- -1.636501724344732
+covariance_matrix_P[8,6] <- 1.825355309701060
+covariance_matrix_P[8,7] <- -0.162898037855255
+covariance_matrix_P[8,8] <- 4.561666666666667
+covariance_matrix_P[8,9] <- 0.285303389492063
+covariance_matrix_P[9,1] <- 0.441111767140451
+covariance_matrix_P[9,2] <- -0.382153470058930
+covariance_matrix_P[9,3] <- -0.524957955119159
+covariance_matrix_P[9,4] <- -1.264696172295281
+covariance_matrix_P[9,5] <- 2.739637669682805
+covariance_matrix_P[9,6] <- 3.253475585497199
+covariance_matrix_P[9,7] <- 6.027755666617771
+covariance_matrix_P[9,8] <- 0.285303389492063
+covariance_matrix_P[9,9] <- 11.918835953735060
+
+for (i in 1 : 9) {
+log_Matrix_P[i, 1 : 9] ~ dmnorm(P_mean[,],covariance_matrix_P[,])
+}
+
+for (i in 1:9) {
+for (j in 1:9) {
+
+Matrix_P[i,j] <- exp(log_Matrix_P[i,j])
+}
+}
+
+k_sub_12 <- Matrix_P[1,1]
+
+k_sub_a1 <- Matrix_P[2,2]
+
+k_sub_a2 <- Matrix_P[3,3]
+
+k_sub_a3 <- Matrix_P[4,4]
+
+S_sub_t <- Matrix_P[5,5]
+
+S_sub_d <- Matrix_P[6,6]
+
+S_sub_e <- Matrix_P[7,7]
+
+F_01 <- Matrix_P[8,8]
+
+EGP_0 <- Matrix_P[9,9]
+
+for (i in 1:15) {
+RW_sub_m[i] ~ dnorm(0,100)
+}
+
+# log_f_sub_m_of_t[1] <- RW_sub_m[1]
+
+for (i in 2:15) {
+log_RW_sub_m[i] <- log(log_f_sub_m_of_t[i-1]) + RW_sub_m[i]
+}
+
+
+log_f_sub_m_of_t[1:15] ~ car.normal(adj_f_sub_m_of_t[],weights_f_sub_m_of_t[],nn_f_sub_m_of_t[],0.01)
+
+for (i in 1:15) {
+# f_sub_m_of_t[i] <- exp(log_f_sub_m_of_t)
+}
+
+for (i in 1:sumNumNeigh_f_sub_m_of_t) {
+weights_f_sub_m_of_t[i] <- 1 }
+
+# DUMMY VALUE
+I_sub_p_of_t <- 9356725.148
+
+solution[1:ngrid, 1:ndim] <- ode(init[1:ndim], tgrid[1], D(C[1:ndim], t),origin[1],tol)
+
+init[1] <- (basal_per_min[1]*p_sub_i)/k_sub_is1
+init[2] <- (C[1]*k_sub_is1)/k_sub_is2
+init[3] <- (basal_per_min[1]*k_sub_is1)/k_sub_is2
+init[4] <- (C[3]) + (Q_sub_b*(1-p_sub_i))
+init[5] <- ((C[2]*k_sub_is2) + (C[4]*k_sub_if)*I_sub_m_of_t)/k_sub_e
+init[6] <- S_sub_t*I_sub_p
+init[7] <- S_sub_d*I_sub_p
+init[8] <- S_sub_e*I_sub_p
+
+D(C[1], t) <- (u_sub_i_of_t*p_sub_i)-(C[1]*k_sub_is1)
+D(C[2], t) <- (C[1]*k_sub_is1)-(C[2]*k_sub_is2)
+D(C[3], t) <- (u_sub_i_of_t*(1-p_sub_i))-(C[3]*k_sub_if)
+D(C[4], t) <- (C[2]*k_sub_if)-(C[4]*k_sub_if)
+D(C[5], t) <- (((C[2]*k_sub_is1)+(C[4]*k_sub_if))*I_sub_m_of_t)-(C[5]*k_sub_e)+c_sub_i
+D(C[6], t) <- (-k_sub_a1*C[6])+(k_sub_a1*S_sub_t*I_sub_p_of_t)
+D(C[7], t) <- (-k_sub_a2*C[7])+(k_sub_a2*S_sub_d*I_sub_p_of_t)
+D(C[8], t) <- (-k_sub_a3*C[8])+(k_sub_a3*S_sub_e*I_sub_p_of_t)
+
+}
+
+
+
+}
+
